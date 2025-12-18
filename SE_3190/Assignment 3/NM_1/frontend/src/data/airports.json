@@ -1,0 +1,296 @@
+[
+  {
+    "code": "BOM",
+    "name": "Mumbai Chhatrapati Shivaji Airport",
+    "lat": 15.0896,
+    "lng": 74.8656
+  },
+  {
+    "code": "ORD",
+    "name": "Chicago O'Hare International Airport",
+    "lat": 38.97959,
+    "lng": -87.90446
+  },
+  {
+    "code": "HKG",
+    "name": "Hong Kong International Airport",
+    "lat": 16.308,
+    "lng": 113.9185
+  },
+  {
+    "code": "SFO",
+    "name": "San Francisco International Airport",
+    "lat": 37.6213,
+    "lng": -122.379
+  },
+  {
+    "code": "EWR",
+    "name": "Newark Liberty International Airport",
+    "lat": 40.69709,
+    "lng": -74.17557
+  },
+  {
+    "code": "DEL",
+    "name": "Indira Gandhi International Airport",
+    "lat": 21.5562,
+    "lng": 79.1
+  },
+  {
+    "code": "LHR",
+    "name": "London Heathrow Airport",
+    "lat": 51.47,
+    "lng": -0.4543
+  },
+  {
+    "code": "SIN",
+    "name": "Singapore Changi Airport",
+    "lat": 1.3644,
+    "lng": 103.9915
+  },
+  {
+    "code": "IAD",
+    "name": "Washington Dulles International Airport",
+    "lat": 38.94877,
+    "lng": -77.4491
+  },
+  {
+    "code": "BLR",
+    "name": "Kempegowda International Airport",
+    "lat": 8.1986,
+    "lng": 79.7066
+  },
+  {
+    "code": "JFK",
+    "name": "John F. Kennedy International Airport",
+    "lat": 40.63983,
+    "lng": -73.77874
+  },
+  {
+    "code": "DOH",
+    "name": "Hamad International Airport",
+    "lat": 20.5731,
+    "lng": 51.6089
+  },
+  {
+    "code": "LAX",
+    "name": "Los Angeles International Airport",
+    "lat": 33.94251,
+    "lng": -118.40897
+  },
+  {
+    "code": "SYD",
+    "name": "Sydney Kingsford Smith Airport",
+    "lat": -35.9399,
+    "lng": 155.1753
+  },
+  {
+    "code": "AUH",
+    "name": "Abu Dhabi International Airport",
+    "lat": 17.2532,
+    "lng": 54.3773
+  },
+  {
+    "code": "DXB",
+    "name": "Dubai International Airport",
+    "lat": 18.2532,
+    "lng": 57.3657
+  },
+  {
+    "code": "ATL",
+    "name": "Hartsfield-Jackson Atlanta International Airport",
+    "lat": 33.64099,
+    "lng": -84.42265
+  },
+  {
+    "code": "DTW",
+    "name": "Detroit Metropolitan Wayne County Airport",
+    "lat": 42.22205,
+    "lng": -83.35147
+  },
+  {
+    "code": "RDU",
+    "name": "Raleigh-Durham International Airport",
+    "lat": 35.87946,
+    "lng": -78.7871
+  },
+  {
+    "code": "BWI",
+    "name": "Baltimore-Washington International Airport",
+    "lat": 39.17539,
+    "lng": -76.66802
+  },
+  {
+    "code": "PHX",
+    "name": "Phoenix Sky Harbor International Airport",
+    "lat": 33.43551,
+    "lng": -111.99807
+  },
+  {
+    "code": "DEN",
+    "name": "Denver International Airport",
+    "lat": 39.85891,
+    "lng": -104.67326
+  },
+  {
+    "code": "BOS",
+    "name": "Logan International Airport",
+    "lat": 42.36514,
+    "lng": -71.01777
+  },
+  {
+    "code": "LAS",
+    "name": "Harry Reid International Airport",
+    "lat": 36.08521,
+    "lng": -115.15068
+  },
+  {
+    "code": "HOU",
+    "name": "William P Hobby Airport",
+    "lat": 29.6524,
+    "lng": -95.27723
+  },
+  {
+    "code": "DFW",
+    "name": "Dallas/Fort Worth International Airport",
+    "lat": 32.89595,
+    "lng": -97.0372
+  },
+  {
+    "code": "MDW",
+    "name": "Chicago Midway International Airport",
+    "lat": 41.7868,
+    "lng": -87.74555
+  },
+  {
+    "code": "IAH",
+    "name": "George Bush Intercontinental Airport",
+    "lat": 29.98687,
+    "lng": -95.34212
+  },
+  {
+    "code": "PGD",
+    "name": "Punta Gorda Airport",
+    "lat": 26.91601,
+    "lng": -81.99691
+  },
+  {
+    "code": "MCI",
+    "name": "Kansas City International Airport",
+    "lat": 39.29623,
+    "lng": -94.71775
+  },
+  {
+    "code": "FLL",
+    "name": "Fort Lauderdale-Hollywood International Airport",
+    "lat": 26.07147,
+    "lng": -80.144
+  },
+  {
+    "code": "CLT",
+    "name": "Charlotte Douglas International Airport",
+    "lat": 35.2207,
+    "lng": -80.94413
+  },
+  {
+    "code": "AUS",
+    "name": "Austin-Bergstrom International Airport",
+    "lat": 30.19453,
+    "lng": -97.66987
+  },
+  {
+    "code": "SJC",
+    "name": "Norman Y. Mineta San Jose International Airport",
+    "lat": 37.36189,
+    "lng": -121.92885
+  },
+  {
+    "code": "CVG",
+    "name": "Cincinnati/Northern Kentucky International Airport",
+    "lat": 39.04614,
+    "lng": -84.66217
+  },
+  {
+    "code": "MSP",
+    "name": "Minneapolis-St Paul International Airport",
+    "lat": 44.88217,
+    "lng": -93.20835
+  },
+  {
+    "code": "STL",
+    "name": "Lambert-St. Louis International Airport",
+    "lat": 38.74321,
+    "lng": -90.36591
+  },
+  {
+    "code": "LGA",
+    "name": "La Guardia Airport",
+    "lat": 40.77607,
+    "lng": -73.87269
+  },
+  {
+    "code": "PDX",
+    "name": "Portland International Airport",
+    "lat": 45.58919,
+    "lng": -122.59353
+  },
+  {
+    "code": "MCO",
+    "name": "Orlando International Airport",
+    "lat": 28.43103,
+    "lng": -81.30768
+  },
+  {
+    "code": "RSW",
+    "name": "Southwest Florida International Airport",
+    "lat": 26.53731,
+    "lng": -81.75997
+  },
+  {
+    "code": "SMF",
+    "name": "Sacramento International Airport",
+    "lat": 38.69518,
+    "lng": -121.59163
+  },
+  {
+    "code": "MSY",
+    "name": "Louis Armstrong New Orleans International Airport",
+    "lat": 29.98724,
+    "lng": -90.25651
+  },
+  {
+    "code": "PHL",
+    "name": "Philadelphia International Airport",
+    "lat": 39.87835,
+    "lng": -75.24018
+  },
+  {
+    "code": "SAN",
+    "name": "San Diego International Airport",
+    "lat": 32.73235,
+    "lng": -117.19744
+  },
+  {
+    "code": "DAL",
+    "name": "Dallas Love Field",
+    "lat": 32.84707,
+    "lng": -96.85195
+  },
+  {
+    "code": "SLC",
+    "name": "Salt Lake City International Airport",
+    "lat": 40.78688,
+    "lng": -111.98203
+  },
+  {
+    "code": "MIA",
+    "name": "Miami International Airport",
+    "lat": 25.79343,
+    "lng": -80.29005
+  },
+  {
+    "code": "SEA",
+    "name": "Seattle Tacoma International Airport",
+    "lat": 45.4502,
+    "lng": -122.3088
+  }
+]

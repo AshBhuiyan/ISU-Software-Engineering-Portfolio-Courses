@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Night mode uses same PlayStation palette (dark theme) -->
+    <color name="ps_primary_blue">#1166FF</color>
+    <color name="ps_primary_blue_dark">#021839</color>
+    <color name="ps_primary_blue_light">#2A7FFF</color>
+    <color name="ps_background">#050C17</color>
+    <color name="ps_background_secondary">#071021</color>
+    <color name="ps_card">#111B2B</color>
+    <color name="ps_card_elevated">#1A2535</color>
+    <color name="ps_accent">#00C8FF</color>
+    <color name="ps_text_primary">#FFFFFF</color>
+    <color name="ps_text_secondary">#B0C4D8</color>
+    <color name="ps_text_tertiary">#7A8FA3</color>
+    <color name="ps_border_subtle">#1E2A3B</color>
+    <color name="ps_divider">#1E2A3B</color>
+    <color name="ps_overlay">#80000000</color>
+</resources>
+

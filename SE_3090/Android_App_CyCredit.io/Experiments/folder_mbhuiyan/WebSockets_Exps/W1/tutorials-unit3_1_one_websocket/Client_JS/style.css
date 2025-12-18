@@ -1,0 +1,224 @@
+:root {
+    --bg: #0b0f14;
+    --panel: #121823;
+    --panel-2: #0f1520;
+    --text: #e7edf5;
+    --muted: #9fb0c3;
+    --brand: #4da3ff;
+    --brand-strong: #2b87ff;
+    --accent: #8ef0c4;
+    --danger: #ff6b6b;
+    --surface: #0d131d;
+    --border: rgba(255, 255, 255, .08);
+    --shadow: 0 10px 25px rgba(0, 0, 0, .35), 0 2px 8px rgba(0, 0, 0, .3);
+    --radius: 16px;
+    --radius-sm: 12px;
+    --radius-xs: 10px;
+    --focus: 0 0 0 3px rgba(77, 163, 255, .35);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    color: var(--text);
+    background: radial-gradient(1200px 600px at 10% -10%, #152033 10%, transparent 60%),
+        radial-gradient(1000px 600px at 100% 0%, #0f1a2b 0%, transparent 55%),
+        var(--bg);
+    line-height: 1.45;
+}
+
+.container {
+    max-width: 980px;
+    margin: 32px auto;
+    padding: 0 20px 40px;
+}
+
+.header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.app-title {
+    font-size: clamp(24px, 3.4vw, 34px);
+    margin: 0;
+    letter-spacing: .2px;
+}
+
+.badge {
+    background: linear-gradient(135deg, var(--brand), var(--accent));
+    color: #00111b;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .3px;
+    box-shadow: var(--shadow);
+}
+
+.author {
+    margin: 0;
+    color: var(--muted);
+}
+
+.card {
+    background: linear-gradient(180deg, var(--panel), var(--panel-2));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(6px);
+}
+
+.connect-card {
+    margin-bottom: 14px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.label {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+    transition: box-shadow .15s ease, border-color .2s ease, background .3s ease;
+}
+
+.input::placeholder {
+    color: #7b8aa1;
+}
+
+.input:focus {
+    box-shadow: var(--focus);
+    border-color: rgba(77, 163, 255, .5);
+}
+
+.btn {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, #172235, #101724);
+    color: var(--text);
+    padding: 10px 16px;
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+    transition: transform .06s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+    font-weight: 600;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, .12);
+}
+
+.btn:active {
+    transform: translateY(0px) scale(.99);
+}
+
+.btn.primary {
+    background: linear-gradient(180deg, var(--brand), var(--brand-strong));
+    color: #03111d;
+    border-color: transparent;
+}
+
+.btn.primary:hover {
+    filter: brightness(1.05);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    background: #697586;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, .25) inset;
+}
+
+.dot.online {
+    background: #31db85;
+}
+
+.dot.error {
+    background: var(--danger);
+}
+
+.hint {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.chat-card .log {
+    width: 100%;
+    min-height: 260px;
+    resize: vertical;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 13px;
+    padding: 14px;
+    background: #0a1019;
+    color: #d7e6ff;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .03);
+    margin-bottom: 12px;
+    outline: none;
+}
+
+.send-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.footer {
+    margin-top: 18px;
+    color: var(--muted);
+    text-align: center;
+}
+
+@media (max-width: 680px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .label {
+        display: none;
+    }
+}

@@ -1,0 +1,205 @@
+<!--  
+Page 1 - ISU Campus Explorer 
+Author: Mekhi San 
+Student ID: 810968272 
+COM S 3190 - Fall 2025 Midterm Project 
+--> 
+
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>ISU Campus Explorer</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="assets/theme.css"> 
+
+
+<style> 
+body { 
+font-family: 'Inter', sans-serif; 
+background-color: #f8f9fa; 
+} 
+
+
+/* Hero section */ 
+.hero { 
+background: linear-gradient(to right, #880e4f, #c2185b); 
+color: white; 
+padding: 5rem 1rem; 
+text-align: center; 
+border-bottom-left-radius: 25px; 
+border-bottom-right-radius: 25px; 
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
+} 
+
+.hero h1 { 
+font-weight: 700; 
+font-size: 2.5rem; 
+} 
+
+
+
+.hero p { 
+font-size: 1.2rem; 
+margin-top: 0.5rem; 
+opacity: 0.9; 
+} 
+
+ 
+
+/* Building cards */ 
+
+.card img { 
+border-top-left-radius: 12px; 
+border-top-right-radius: 12px; 
+height: 200px; 
+object-fit: cover; 
+} 
+
+
+
+.card { 
+border-radius: 12px; 
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+transition: transform 0.25s ease, box-shadow 0.25s ease; 
+} 
+
+ 
+.card:hover { 
+transform: translateY(-5px); 
+box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25); 
+} 
+
+ 
+
+.footer { 
+background-color: #212529; 
+color: white; 
+padding: 1rem; 
+text-align: center; 
+margin-top: 3rem; 
+font-size: 0.9rem; 
+} 
+
+</style> 
+
+</head> 
+
+<body> 
+
+<!-- Navbar --> 
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm"> 
+<div class="container"> 
+<a class="navbar-brand fw-semibold" href="index.html">ISU Campus Explorer</a> 
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"> 
+
+<span class="navbar-toggler-icon"></span> 
+
+</button> 
+<div id="nav" class="collapse navbar-collapse"> 
+<ul class="navbar-nav ms-auto"> 
+<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li> 
+<li class="nav-item"><a class="nav-link" href="page2.html">Map</a></li> 
+<li class="nav-item"><a class="nav-link" href="page3.html">Library</a></li> 
+<li class="nav-item"><a class="nav-link" href="page4.html">Carver</a></li> 
+<li class="nav-item"><a class="nav-link" href="authors.html">Authors</a></li> 
+<li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li> 
+</ul> 
+
+</div> 
+
+</div> 
+
+</nav> 
+
+ 
+
+<!-- Hero Section --> 
+
+<section class="hero"> 
+<div class="container"> 
+<h1>Welcome to ISU Campus Explorer</h1> 
+<p>Your guide to exploring Iowa State University’s academic buildings, study spaces, and more.</p> 
+</div> 
+
+</section> 
+
+ 
+
+<!-- Building Preview Cards --> 
+
+<main class="container py-5 text-center"> 
+<h2 class="fw-bold mb-4">Explore Key Locations</h2> 
+<div class="row justify-content-center g-4"> 
+<!-- Campus Map --> 
+
+<div class="col-md-4"> 
+<div class="card h-100"> 
+<img src="assets/images/Iowa_State_Cyclones_logo.svg.png" alt="Campus Map"> 
+<div class="card-body"> 
+<h5 class="card-title">Campus Map</h5> 
+<p class="card-text text-muted">View a live layout of ISU’s key buildings and navigate easily across campus.</p> 
+<a href="page2.html" class="btn btn-primary">View Map</a> 
+</div> 
+
+</div> 
+
+</div> 
+
+ 
+
+<!-- Parks Library --> 
+
+<div class="col-md-4"> 
+<div class="card h-100"> 
+<img src="assets/images/parks1.jpeg" alt="Parks Library"> 
+<div class="card-body"> 
+<h5 class="card-title">Parks Library</h5> 
+<p class="card-text text-muted">Explore ISU’s main library — study areas, resources, and all its floors.</p> 
+<a href="page3.html" class="btn btn-primary">Explore Library</a> 
+</div> 
+</div> 
+</div> 
+
+ 
+
+<!-- Carver Hall --> 
+
+<div class="col-md-4"> 
+<div class="card h-100"> 
+<img src="assets/images/carverhall.jpg" alt="Carver Hall"> 
+<div class="card-body"> 
+<h5 class="card-title">Carver Hall</h5> 
+<p class="card-text text-muted">Learn about Carver Hall — the hub for math, stats, and classrooms at ISU.</p> 
+<a href="page4.html" class="btn btn-primary">Visit Carver</a> 
+</div> 
+
+</div> 
+
+</div> 
+
+</div> 
+
+</main> 
+
+ 
+
+<!-- Footer --> 
+
+<footer class="footer"> 
+<div>Team NM_1 — Mekhi San & Ash Bhuiyan | COM S/SE 3190 | Fall 2025</div> 
+</footer> 
+
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> 
+
+<script src="index.js"></script> 
+
+</body> 
+
+</html>

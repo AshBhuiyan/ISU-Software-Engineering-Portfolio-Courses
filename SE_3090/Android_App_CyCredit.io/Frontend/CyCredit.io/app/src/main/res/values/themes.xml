@@ -1,0 +1,83 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base PlayStation theme -->
+    <style name="Base.Theme.CyCredit.Playstation" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary colors -->
+        <item name="colorPrimary">@color/ps_primary_blue</item>
+        <item name="colorPrimaryVariant">@color/ps_primary_blue_dark</item>
+        <item name="colorOnPrimary">@color/ps_text_primary</item>
+        
+        <!-- Accent color -->
+        <item name="colorAccent">@color/ps_accent</item>
+        
+        <!-- Background colors -->
+        <item name="android:windowBackground">@color/ps_background</item>
+        <item name="colorSurface">@color/ps_card</item>
+        <item name="colorOnSurface">@color/ps_text_primary</item>
+        
+        <!-- Status and navigation bars - transparent for full-bleed -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <!-- Allow content to extend into display cutouts (notches) -->
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/ps_text_primary</item>
+        <item name="android:textColorSecondary">@color/ps_text_secondary</item>
+        
+        <!-- Card view -->
+        <item name="cardViewStyle">@style/PsCard</item>
+        
+        <!-- Button styles -->
+        <item name="materialButtonStyle">@style/PsPrimaryButton</item>
+        
+        <!-- Bottom navigation -->
+        <item name="bottomNavigationStyle">@style/PsBottomNav</item>
+    </style>
+
+    <!-- Main application theme -->
+    <style name="Theme.CyCredit.Playstation" parent="Base.Theme.CyCredit.Playstation" />
+    
+    <!-- HomeActivity theme - visible bars with dark navy -->
+    <style name="Theme.CyCredit.HomeWithBars" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Visible bars with dark navy colors -->
+        <item name="android:statusBarColor">@color/ps_primary_blue_dark</item>
+        <item name="android:navigationBarColor">@color/ps_primary_blue_dark</item>
+        <!-- Keep content *below* the bars by default -->
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <!-- Light icons on dark background -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+    
+    <!-- HomeActivity theme - solid bars matching Login -->
+    <style name="Theme.CyCredit.HomeBarsSolid" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- SAME color as Login -->
+        <item name="android:statusBarColor">@color/login_bar_solid</item>
+        <item name="android:navigationBarColor">@color/login_bar_solid</item>
+        <!-- avoid gray dividers/forced contrast on Q+ -->
+        <item name="android:navigationBarDividerColor">@android:color/transparent</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <!-- Light icons on dark background -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+    
+    <!-- HomeActivity theme - exact color from swatch -->
+    <style name="Theme.CyCredit.HomeBarsExact" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/cy_bar_exact</item>
+        <item name="android:navigationBarColor">@color/cy_bar_exact</item>
+        <item name="android:navigationBarDividerColor">@android:color/transparent</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <!-- Light icons on dark background -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+    
+    <!-- Legacy theme (for compatibility) -->
+    <style name="Base.Theme.AndroidExample" parent="Theme.CyCredit.Playstation" />
+    <style name="Theme.AndroidExample" parent="Base.Theme.AndroidExample" />
+</resources>

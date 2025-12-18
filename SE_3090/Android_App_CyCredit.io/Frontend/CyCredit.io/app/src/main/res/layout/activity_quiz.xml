@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ps_background_gradient">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Header Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/PsCard"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/quiz_title"
+                            android:text="Parks Library Challenge"
+                            style="@style/PsSectionTitleText"
+                            android:textSize="24sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_back_to_map"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="BACK TO CAMPUS MAP"
+                            android:textColor="@color/ps_text_primary"
+                            app:backgroundTint="@color/ps_primary_blue"
+                            app:cornerRadius="20dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:id="@+id/progress_summary"
+                            android:text="Mastered 0 of 0 questions"
+                            style="@style/PsBodyText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Filters Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/PsCard"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="8dp">
+
+                                <TextView
+                                    android:text="Topic"
+                                    style="@style/PsCaptionText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="8dp" />
+
+                                <Spinner
+                                    android:id="@+id/topic_spinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="48dp"
+                                    android:backgroundTint="@color/ps_accent" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginStart="8dp">
+
+                                <TextView
+                                    android:text="Difficulty"
+                                    style="@style/PsCaptionText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="8dp" />
+
+                                <Spinner
+                                    android:id="@+id/difficulty_spinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="48dp"
+                                    android:backgroundTint="@color/ps_accent" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/refresh_button"
+                            android:text="Load Questions"
+                            style="@style/PsPrimaryButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Question Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/question_container"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/PsCard"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/question_topic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Topic • Difficulty"
+                            style="@style/PsCaptionText"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:id="@+id/question_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Question prompt"
+                            android:textColor="@color/ps_text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="16dp" />
+
+                        <RadioGroup
+                            android:id="@+id/quiz_options"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/submit_quiz_btn"
+                            android:text="Submit Answer"
+                            style="@style/PsPrimaryButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/next_question_btn"
+                            android:text="Next Question"
+                            style="@style/PsSecondaryButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/result_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Result details"
+                            style="@style/PsBodyText"
+                            android:layout_marginTop="16dp"
+                            android:gravity="center"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/reward_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Reward info"
+                            android:textColor="@color/ps_accent"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Empty State -->
+                <TextView
+                    android:id="@+id/empty_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No questions available. Adjust filters or try again later."
+                    style="@style/PsBodyText"
+                    android:gravity="center"
+                    android:layout_marginTop="32dp"
+                    android:visibility="gone" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_gravity="center_horizontal"
+                    android:indeterminateTint="@color/ps_accent"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

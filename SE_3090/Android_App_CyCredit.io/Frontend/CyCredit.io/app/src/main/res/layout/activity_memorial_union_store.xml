@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ps_background_gradient">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/storeSwipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Header Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Memorial Union Store"
+                        style="@style/PsSectionTitleText"
+                        android:textSize="24sp"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Back to Campus Map Button - Subtle and Elegant with Neon Border -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/backToMapBtn"
+                        android:text="Back to Campus Map"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/ps_text_secondary"
+                        android:textSize="14sp"
+                        android:letterSpacing="0.02"
+                        android:paddingStart="24dp"
+                        android:paddingEnd="24dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+            android:minHeight="40dp"
+            android:background="@drawable/ps_neon_border_button"
+            android:backgroundTint="@android:color/transparent"
+            app:rippleColor="@color/ps_accent" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Balance Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/availableBalance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Available: $0.00"
+                    android:textColor="@color/ps_text_primary"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:gravity="end" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Store Items List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/storeRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false" />
+
+            <ProgressBar
+                android:id="@+id/storeProgress"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/ps_accent"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/emptyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"
+                android:text="No items available."
+                style="@style/PsBodyText"
+                android:gravity="center" />
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/ps_card_bottom_rounded"
+        android:elevation="12dp"
+        style="@style/PsBottomNav"
+        app:itemIconTint="@drawable/ps_bottom_nav_selector"
+        app:itemTextColor="@drawable/ps_bottom_nav_selector"
+        app:itemRippleColor="@color/ps_accent"
+        app:menu="@menu/map_bottom_nav"
+        app:labelVisibilityMode="labeled"
+        app:itemIconSize="24dp"
+        app:itemTextAppearanceActive="@style/PsBottomNavTextActive"
+        app:itemTextAppearanceInactive="@style/PsBottomNavTextInactive" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

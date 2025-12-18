@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        function cal(op){
+            var numA, numB, res=0;
+            numA = parseInt(document.from1.f1.value);
+            numB = parseInt(document.from1.f2.value);
+            switch(op){
+                case('+'): res = numA + numB;
+                            break;
+                case('-'): res = numA - numB;
+                            break;
+                case('*'): res = numA * numB;
+                            break;
+                case('/'): res = numA / numB;
+                            break;
+            }
+            document.form1.result.value=res;
+        }
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Simple Arithmetic Operations</H1>
+    <form name="form1">
+        <table border="2">
+            <tr>
+                <th>First Number:</th>
+                <td><input type="text" name="f1" size="15"></td>
+            </tr>
+            <tr>
+                <th>Second Number:</th>
+                <td><input type="text" name="f2" size="15"></td>
+            </tr>
+            <tr>
+                <th>Result:</th>
+                <td><input type="text" name="result" size="15"></td>
+            </tr>
+
+        </table>
+        <br></br>
+        <input type="button" name="ADD" value="ADD" onclick="cal('+')">
+        <input type="button" name="SUBTRACT" value="SUBTRACT" onclick="cal('-')">
+        <input type="button" name="MULTIPLY" value="MULTIPLY" onclick="cal('*')">
+        <input type="button" name="DIVIDE" value="DIVIDE" onclick="cal('/')">
+    </form>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Events</title>
+</head>
+
+<body>
+  <h1>JavaScript Events Exercises (1–8)</h1>
+  <hr>
+
+  <!-- Exercise 1: onmouseover / onmouseout -->
+  <h2>Exercise 1: onmouseover & onmouseout</h2>
+  <p id="p" onmouseover="increaseFont()" onmouseout="decreaseFont()">
+    Hover over this text to increase font size.
+  </p>
+
+  <script>
+    // When mouse hovers over paragraph, make font bigger
+    function increaseFont() {
+      let p = document.getElementById("p");
+      p.setAttribute("style", "font-size:32px");
+    }
+
+    // When mouse leaves, set font size back to normal
+    function decreaseFont() {
+      let p = document.getElementById("p");
+      p.setAttribute("style", "font-size:16px");
+    }
+  </script>
+
+  <hr>
+
+  <!-- Exercise 2: addEventListener -->
+  <h2>Exercise 2: addEventListener Alert</h2>
+  <button id="demoButton">Greetings for today</button>
+
+  <script>
+    // Get the button
+    let d = document.getElementById("demoButton");
+
+    // Change between "click", "dblclick", or "mouseover" for testing
+    // Here we'll use double click for fun
+    d.addEventListener("dblclick", () => {
+      alert("Good Morning! Have a great day ahead.");
+    });
+  </script>
+
+  <hr>
+
+  <!-- Exercise 3: Multiple event listeners -->
+  <h2>Exercise 3: Multiple addEventListeners</h2>
+  <p id="singleElement">Default Content</p>
+  <button id="multiEventBtn">Test it</button>
+
+  <script>
+    // Attach multiple event handlers to one element
+    var demoButtonElement = document.getElementById("multiEventBtn");
+
+    demoButtonElement.addEventListener("mouseover", mouseOverFunction);
+    demoButtonElement.addEventListener("click", clickFunction);
+    demoButtonElement.addEventListener("mouseout", mouseOutFunction);
+
+    function mouseOverFunction() {
+      let a = document.getElementById("singleElement");
+      a.setAttribute('style', 'background:yellow');
+      a.innerHTML = "This element represents mouseOver event";
+    }
+
+    function clickFunction() {
+      let b = document.getElementById("singleElement");
+      b.setAttribute('style', 'background:orange');
+      b.innerHTML = "This element represents click event";
+    }
+
+    function mouseOutFunction() {
+      let c = document.getElementById("singleElement");
+      c.setAttribute('style', 'background:red');
+      c.innerHTML = "This element represents mouseOut event";
+    }
+  </script>
+
+  <hr>
+
+  <!-- Exercise 4: window load event -->
+  <h2>Exercise 4: Window Load Event</h2>
+  <div id="windowload">Div to test window load.</div>
+
+  <script>
+    // When window loads, show a welcome message
+    window.addEventListener("load", () => {
+      let div = document.getElementById("windowload");
+      div.innerHTML = "<h1 style='font-size:48px'>Hi everybody !!</h1>";
+
+      // After 4 seconds, reduce font size back to normal
+      setTimeout(() => {
+        div.innerHTML = "<h1 style='font-size:32px'>Hi everybody !!!</h1>";
+      }, 4000);
+    });
+  </script>
+
+  <hr>
+
+  <!-- Exercise 5: keydown event -->
+  <h2>Exercise 5: Keydown Event</h2>
+  <div id="keydownTest">Press any key...</div>
+
+  <script>
+    // When a key is pressed, show which key was pressed
+    window.addEventListener("keydown", (event) => {
+      let div = document.getElementById("keydownTest");
+      div.innerHTML = `<h1 style='font-size:48px'>${event.key} pressed.</h1>`;
+      console.log(event.key); // Print the key to console for debugging
+    });
+  </script>
+
+  <hr>
+
+  <!-- Exercise 6: window resize -->
+  <h2>Exercise 6: Window Resize Event</h2>
+  <div id="resizeTest" style="padding:20px;">Resize the window to see color change!</div>
+
+  <script>
+    // Each time you resize the browser, the background color changes randomly
+    window.addEventListener("resize", function () {
+      document.getElementById("resizeTest").style.backgroundColor =
+        '#' + Math.floor(Math.random() * 16777215).toString(16);
+    });
+  </script>
+
+  <hr>
+
+  <!-- Exercise 7: Click & Right Click Events -->
+  <h2>Exercise 7: Click & Right Click on Image</h2>
+  <img id="turtle" src="https://www.timeforkids.com/wp-content/uploads/2020/04/200410016385.jpg" alt="turtle" style="width:200px">
+
+  <script>
+    const turtle = document.getElementById('turtle');
+
+    // Left-click to increase turtle size
+    turtle.addEventListener('click', event => {
+      turtle.setAttribute("style", "width:500px");
+    });
+
+    // Right-click (context menu) to decrease turtle size
+    turtle.addEventListener('contextmenu', event => {
+      event.preventDefault(); // prevent context menu
+      turtle.setAttribute("style", "width:200px");
+    });
+  </script>
+
+  <hr>
+
+  <!-- Exercise 8: External JS animation (simulated) -->
+  <h2>Exercise 8: Adding External JS and Image</h2>
+  <p>(Simulating external animation script inclusion)</p>
+
+  <!-- Updated penguin image with corrected position -->
+  <img id="penguin" src="https://s.w-x.co/King%20Penguin%20Found%20In%20Buenos%20Aires%20Released%20Thumb%203.jpg?crop=16%3A9&format=auto&auto=webp&quality=60&width=3840&optimize=medium" alt="penguin"
+    style="position:absolute; left:200px; top:1200px; width:200px;">
+
+  <!-- This would normally link to an external file named animate.js -->
+  <script>
+    // Simulated animation (like an external JS file would do)
+    const penguin = document.getElementById('penguin');
+    let pos = 200;
+    setInterval(() => {
+      pos += 5;
+      penguin.style.left = pos + "px";
+      if (pos > window.innerWidth - 200) pos = 0;
+    }, 100);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LoginActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="24dp"
+        android:textSize="28sp"
+        android:textColor="#3F51B5" />
+
+    <!-- Username -->
+    <EditText
+        android:id="@+id/login_username_edt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter username"
+        android:inputType="textPersonName"
+        android:padding="12dp" />
+
+    <!-- Password -->
+    <EditText
+        android:id="@+id/login_password_edt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter password"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:layout_marginTop="12dp" />
+
+    <!-- Show password / Remember me -->
+    <CheckBox
+        android:id="@+id/login_showpw_chk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show password"
+        android:layout_marginTop="8dp" />
+
+    <CheckBox
+        android:id="@+id/login_remember_chk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember me" />
+
+    <!-- Actions -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp">
+
+        <Button
+            android:id="@+id/login_login_btn"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:backgroundTint="#3F51B5"
+            android:layout_marginEnd="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+
+        <Button
+            android:id="@+id/login_signup_btn"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="Signup"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:backgroundTint="#009688"
+            android:layout_marginStart="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

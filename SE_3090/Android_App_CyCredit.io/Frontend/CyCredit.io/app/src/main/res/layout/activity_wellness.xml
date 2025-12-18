@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ps_background_gradient">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Header Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/gym_title"
+                        android:text="State Gym"
+                        style="@style/PsSectionTitleText"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/gym_subtitle"
+                        android:text="Work out to earn rewards!"
+                        style="@style/PsBodyText"
+                        android:textColor="@color/ps_text_secondary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_back_to_map"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BACK TO CAMPUS MAP"
+                        android:textColor="@color/ps_text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:paddingStart="24dp"
+                        android:paddingEnd="24dp"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        app:backgroundTint="@color/ps_primary_blue"
+                        app:cornerRadius="20dp"
+                        android:layout_gravity="center_horizontal"
+                        android:minWidth="200dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Membership Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/membership_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Your Membership"
+                        style="@style/PsSectionTitleText"
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:text="Current Tier:"
+                            style="@style/PsBodyText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/membership_tier_label"
+                            android:text="NONE"
+                            android:textColor="@color/ps_accent"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:text="Reward Multiplier:"
+                            style="@style/PsBodyText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/membership_multiplier_label"
+                            android:text="0x"
+                            android:textColor="@color/ps_success_green"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:text="Workouts Today:"
+                            style="@style/PsBodyText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/workouts_today_label"
+                            android:text="0/0"
+                            android:textColor="@color/ps_text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <!-- Subscribe Buttons -->
+                    <TextView
+                        android:id="@+id/subscribe_prompt"
+                        android:text="Choose a membership to start working out:"
+                        style="@style/PsBodyText"
+                        android:textColor="@color/ps_text_secondary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_sub_basic"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Basic\n$5"
+                            android:textSize="11sp"
+                            app:backgroundTint="#3D5A80"
+                            android:textColor="@color/ps_text_primary"
+                            app:cornerRadius="12dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_sub_premium"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Premium\n$15"
+                            android:textSize="11sp"
+                            app:backgroundTint="#00C8FF"
+                            android:textColor="#0D1B2A"
+                            app:cornerRadius="12dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_sub_vip"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="VIP\n$30"
+                            android:textSize="11sp"
+                            app:backgroundTint="#FFD700"
+                            android:textColor="#0D1B2A"
+                            app:cornerRadius="12dp"
+                            android:layout_marginStart="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Workouts Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/workouts_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Choose Your Workout"
+                        style="@style/PsSectionTitleText"
+                        android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Workout Grid -->
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <!-- Weight Lifting -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/workout_weightlifting"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="160dp"
+                            android:minHeight="160dp"
+                            app:cardBackgroundColor="#1B263B"
+                            app:cardCornerRadius="12dp"
+                            app:strokeColor="#3D5A80"
+                            app:strokeWidth="1dp"
+                            android:layout_marginEnd="4dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:padding="12dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:text="Weight Lift"
+                                    android:textColor="@color/ps_text_primary"
+                                    android:textSize="24sp"
+                                    android:gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="Weight\nLifting"
+                                    android:textColor="@color/ps_text_primary"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold"
+                                    android:gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp" />
+
+                                <TextView
+                                    android:id="@+id/weightlifting_reward"
+                                    android:text="$4.00"
+                                    android:textColor="@color/ps_success_green"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:gravity="center"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Treadmill -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/workout_treadmill"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="160dp"
+                            android:minHeight="160dp"
+                            app:cardBackgroundColor="#1B263B"
+                            app:cardCornerRadius="12dp"
+                            app:strokeColor="#3D5A80"
+                            app:strokeWidth="1dp"
+                            android:layout_marginStart="4dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:padding="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:text="Treadmill"
+                                    android:textColor="@color/ps_text_primary"
+                                    android:textSize="28sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="Treadmill\nRun"
+                                    android:textColor="@color/ps_text_primary"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp" />
+
+                                <TextView
+                                    android:id="@+id/treadmill_reward"
+                                    android:text="$3.00"
+                                    android:textColor="@color/ps_success_green"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Yoga -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/workout_yoga"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="160dp"
+                            android:minHeight="160dp"
+                            app:cardBackgroundColor="#1B263B"
+                            app:cardCornerRadius="12dp"
+                            app:strokeColor="#3D5A80"
+                            app:strokeWidth="1dp"
+                            android:layout_marginEnd="4dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:padding="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:text="Yoga"
+                                    android:textColor="@color/ps_text_primary"
+                                    android:textSize="28sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="Yoga\nBalance"
+                                    android:textColor="@color/ps_text_primary"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp" />
+
+                                <TextView
+                                    android:id="@+id/yoga_reward"
+                                    android:text="$3.50"
+                                    android:textColor="@color/ps_success_green"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Jump Rope -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/workout_jumprope"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="160dp"
+                            android:minHeight="160dp"
+                            app:cardBackgroundColor="#1B263B"
+                            app:cardCornerRadius="12dp"
+                            app:strokeColor="#3D5A80"
+                            app:strokeWidth="1dp"
+                            android:layout_marginStart="4dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:padding="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:text="Jump"
+                                    android:textColor="@color/ps_text_primary"
+                                    android:textSize="28sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="Jump\nRope"
+                                    android:textColor="@color/ps_text_primary"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp" />
+
+                                <TextView
+                                    android:id="@+id/jumprope_reward"
+                                    android:text="$2.50"
+                                    android:textColor="@color/ps_success_green"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/workout_status_text"
+                        android:text="Get a membership to start working out!"
+                        style="@style/PsBodyText"
+                        android:textColor="@color/ps_text_secondary"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Game Container (for mini-games) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/game_container_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/game_title"
+                        android:text="Weight Lifting"
+                        style="@style/PsSectionTitleText"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/game_instruction"
+                        android:text="Tap rapidly to lift the barbell!"
+                        style="@style/PsBodyText"
+                        android:textColor="@color/ps_text_secondary"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Progress bar for game -->
+                    <ProgressBar
+                        android:id="@+id/game_progress_bar"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressTint="@color/ps_success_green"
+                        android:progressBackgroundTint="@color/ps_border_subtle"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/game_score_label"
+                        android:text="Score: 0"
+                        style="@style/PsBodyText"
+                        android:textColor="@color/ps_accent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/game_timer_label"
+                        android:text="Time: 15s"
+                        style="@style/PsBodyText"
+                        android:textColor="@color/ps_text_primary"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Action button for the game -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/game_action_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:text="TAP!"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/ps_accent"
+                        android:textColor="#0D1B2A"
+                        app:cornerRadius="16dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/game_cancel_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cancel"
+                        android:textSize="12sp"
+                        app:backgroundTint="#3D5A80"
+                        android:textColor="@color/ps_text_primary"
+                        app:cornerRadius="12dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Stats Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Your Stats"
+                        style="@style/PsSectionTitleText"
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:text="Total Workouts:"
+                            style="@style/PsBodyText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/total_workouts_label"
+                            android:text="0"
+                            android:textColor="@color/ps_accent"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Streak:"
+                            style="@style/PsBodyText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/streak_label"
+                            android:text="0 days"
+                            android:textColor="@color/ps_success_green"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <ProgressBar
+                android:id="@+id/progress_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:indeterminateTint="@color/ps_accent"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

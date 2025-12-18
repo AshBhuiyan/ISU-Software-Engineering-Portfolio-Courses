@@ -1,0 +1,73 @@
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+}
+
+/* Page padding + wider container */
+.app-pad { padding: 24px 16px; }
+.container.app-pad { max-width: 1400px; }
+
+/* Slightly reduce Bootstrap row gutter so cards grow */
+.row.g-4 { --bs-gutter-x: 1.25rem; }
+
+/* Card shell */
+.user-card {
+  width: 100% !important;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Big banner-style image on top */
+.user-card .card-img-top {
+  width: 100%;
+  height: clamp(320px, 36vw, 440px);
+  object-fit: cover;
+  object-position: 50% 25%;
+  display: block;
+}
+
+/* Content spacing */
+.user-card .card-body { padding: 16px 18px; }
+.user-card .card-title { margin-bottom: 6px; font-weight: 600; }
+.user-card .card-text { margin-bottom: 8px; }
+
+/* List defaults */
+.user-card ul { list-style: none; margin: 0; padding-left: 0; }
+.user-card li { margin: 0; }
+
+/* Address line */
+.user-card .address-line {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  gap: 0;
+  white-space: nowrap;
+}
+.user-card .address-line li + li::before {
+  content: ", ";
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 992px) {
+  .user-card .card-img-top { height: clamp(240px, 40vw, 320px); }
+}
+@media (max-width: 576px) {
+  .user-card .card-img-top { height: 220px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .user-card { transition: none; }
+}

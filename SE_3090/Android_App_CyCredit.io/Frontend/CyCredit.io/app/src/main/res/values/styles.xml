@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PlayStation Card Style -->
+    <style name="PsCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardBackgroundColor">@color/ps_card</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    
+    <!-- PlayStation Header Card Style -->
+    <style name="PsHeaderCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">0dp</item>
+        <item name="cardBackgroundColor">@color/ps_card_elevated</item>
+        <item name="cardElevation">8dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="android:layout_margin">0dp</item>
+    </style>
+    
+    <style name="PsCardElevated" parent="PsCard">
+        <item name="cardBackgroundColor">@color/ps_card_elevated</item>
+        <item name="cardElevation">8dp</item>
+    </style>
+    
+    <!-- PlayStation Text Styles -->
+    <style name="PsSectionTitleText">
+        <item name="android:textColor">@color/ps_text_primary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+    
+    <style name="PsSubtitleText">
+        <item name="android:textColor">@color/ps_text_secondary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    
+    <style name="PsBodyText">
+        <item name="android:textColor">@color/ps_text_secondary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    
+    <style name="PsCaptionText">
+        <item name="android:textColor">@color/ps_text_tertiary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    
+    <!-- PlayStation Button Styles - Refined for crisp, professional appearance -->
+    <style name="PsIconButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/ps_primary_blue</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="rippleColor">@color/ps_accent</item>
+    </style>
+    
+    <style name="PsPrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/ps_primary_blue</item>
+        <item name="android:textColor">@color/ps_text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="cornerRadius">28dp</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:minWidth">120dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingStart">28dp</item>
+        <item name="android:paddingEnd">28dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">false</item>
+        <item name="rippleColor">@color/ps_accent</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    
+    <!-- Small variant of PsPrimaryButton for compact layouts (e.g., store item rows) -->
+    <style name="PsPrimaryButtonSmall" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/ps_primary_blue</item>
+        <item name="android:textColor">@color/ps_text_primary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:minWidth">64dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="rippleColor">@color/ps_accent</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    
+    <style name="PsSecondaryButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/ps_border_subtle</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/ps_text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">120dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingStart">28dp</item>
+        <item name="android:paddingEnd">28dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">false</item>
+        <item name="rippleColor">@color/ps_accent</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    
+    <!-- PlayStation Bottom Navigation -->
+    <style name="PsBottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconTint">@color/ps_text_secondary</item>
+        <item name="itemTextColor">@color/ps_text_secondary</item>
+        <item name="itemRippleColor">@color/ps_accent</item>
+        <item name="android:background">@color/ps_card</item>
+        <item name="android:elevation">8dp</item>
+    </style>
+    
+    <!-- Bottom Navigation Text Styles -->
+    <style name="PsBottomNavTextActive">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/ps_text_primary</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    
+    <style name="PsBottomNavTextInactive">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/ps_text_secondary</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    
+    <!-- PlayStation Page Background -->
+    <style name="PsPageBackground">
+        <item name="android:background">@drawable/ps_background_gradient</item>
+    </style>
+    
+    <!-- PlayStation Chip Style -->
+    <style name="PsChip" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="chipBackgroundColor">@color/ps_card_elevated</item>
+        <item name="android:textColor">@color/ps_text_primary</item>
+        <item name="chipStrokeColor">@color/ps_border_subtle</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+    
+    <!-- PlayStation Input Style -->
+    <style name="PsInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/ps_card</item>
+        <item name="boxStrokeColor">@color/ps_border_subtle</item>
+        <item name="hintTextColor">@color/ps_text_tertiary</item>
+        <item name="android:textColorHint">@color/ps_text_tertiary</item>
+        <item name="android:textColor">@color/ps_text_primary</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+</resources>

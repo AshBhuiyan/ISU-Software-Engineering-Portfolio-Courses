@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ps_background_gradient">
+
+    <ScrollView
+        android:id="@+id/scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Header Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/title_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Set Your Starting Stats"
+                        style="@style/PsSectionTitleText"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="20dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/PsInput"
+                        android:hint="Enter Starting Funds (0 - 10,000)"
+                        android:layout_marginBottom="12dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/starting_funds_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:minHeight="56dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/credit_hint_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enter a starting amount to see valid credit range."
+                        android:textColor="@color/ps_accent"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/PsInput"
+                        android:hint="Enter Starting Credit Score"
+                        android:layout_marginBottom="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/starting_credit_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:minHeight="56dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Button Container -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/back_btn"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:contentDescription="Back"
+                            app:srcCompat="@drawable/ic_back_arrow"
+                            android:background="@drawable/ps_icon_button_bg"
+                            android:tint="@color/ps_text_primary"
+                            android:padding="12dp"
+                            android:layout_marginEnd="12dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/start_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:minHeight="56dp"
+                            android:text="Save Player Info"
+                            style="@style/PsPrimaryButton" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Go to Map Button Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_go_map"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Go to Campus Map"
+                        style="@style/PsPrimaryButton" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Resource Controls Dropdown Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Dropdown Header -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_toggle_controls"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Resource Controls ▼"
+                        android:textAllCaps="false"
+                        style="@style/PsSecondaryButton" />
+
+                    <!-- CRUD Buttons Container (initially hidden) -->
+                    <LinearLayout
+                        android:id="@+id/crud_buttons_container"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:paddingTop="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_post"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Save (POST)"
+                            android:backgroundTint="#388E3C"
+                            android:textColor="@color/ps_text_primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_get"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fetch (GET)"
+                            android:backgroundTint="@color/ps_primary_blue_light"
+                            android:textColor="@color/ps_text_primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_put"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Update (PUT)"
+                            android:backgroundTint="#FF9800"
+                            android:textColor="@color/ps_text_primary"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_delete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Remove (DELETE)"
+                            android:backgroundTint="#F44336"
+                            android:textColor="@color/ps_text_primary" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Response Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/response_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Response"
+                        android:textColor="@color/ps_text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/response_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Save your player info to see the response here."
+                        android:textColor="@color/ps_text_secondary"
+                        android:textSize="14sp"
+                        android:lineSpacingMultiplier="1.2" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

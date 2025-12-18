@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Map screen edge inset - matches grey frame horizontal gap -->
+    <dimen name="map_edge_inset">12dp</dimen>
+    <!-- Map screen corner radius - matches grey frame corner radius -->
+    <dimen name="map_corner_radius">20dp</dimen>
+</resources>
+

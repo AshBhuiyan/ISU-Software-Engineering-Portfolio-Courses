@@ -1,0 +1,109 @@
+{
+  "categories": [
+    {
+      "name": "Software Development",
+      "courses": [
+        {
+          "id": 101,
+          "title": "React Essentials",
+          "instructor": "anonymous",
+          "duration": "6h 30m",
+          "price": 54.99,
+          "thumbnail": "https://img-c.udemycdn.com/course/750x422/6704021_a06b.jpg",
+          "trailer": "https://www.youtube.com/embed/s2skans2dP4",
+          "description": "Learn core React concepts including components, hooks, and state management through hands-on projects."
+        },
+        {
+          "id": 102,
+          "title": "Advanced TypeScript Patterns",
+          "instructor": "anonymous",
+          "duration": "8h 05m",
+          "price": 44.99,
+          "thumbnail": "http://angularexperts.imgix.net/blog/advanced-typescript/title-16x9.webp?auto=format&w=1080",
+          "trailer": "https://www.youtube.com/embed/zQnBQ4tB3ZA",
+          "description": "TypeScript generics, utility types, and advanced typing techniques for large-scale applications."
+        },
+        {
+          "id": 103,
+          "title": "Fullstack with Node & Express",
+          "instructor": "anonymous",
+          "duration": "10h 45m",
+          "price": 49.99,
+          "thumbnail": "https://cdn.prod.website-files.com/664d0f8b7d168b5bb6003084/674d2dac2b9fde47301013c2_full-stack-applications-nodejs-express-mongodb-p-1080.png",
+          "trailer": "https://www.youtube.com/embed/Oe421EPjeBE",
+          "description": "Build REST APIs with Express, handle middleware, and connect to databases in practical labs."
+        }
+      ]
+    },
+    {
+      "name": "AI & Machine Learning",
+      "courses": [
+        {
+          "id": 201,
+          "title": "Intro to Machine Learning",
+          "instructor": "anonymous",
+          "duration": "7h 00m",
+          "price": 39.99,
+          "thumbnail": "https://m.media-amazon.com/images/S/pv-target-images/429725e9ac8923a1f646d69c86df402179266e9be43b80992d957c7a448bb7f9.jpg",
+          "trailer": "https://www.youtube.com/embed/GwIo3gDZCVQ",
+          "description": "Fundamentals of supervised and unsupervised learning with intuitive explanations and demos."
+        },
+        {
+          "id": 202,
+          "title": "Neural Networks from Scratch",
+          "instructor": "anonymous",
+          "duration": "9h 15m",
+          "price": 57.99,
+          "thumbnail": "https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202011/MIT-Network-Confidence-01-Press_0.jpg?itok=Wnt9cX6G",
+          "trailer": "https://www.youtube.com/embed/aircAruvnKk",
+          "description": "Implement dense networks, backprop, and optimizers while building intuition for deep learning."
+        },
+        {
+          "id": 203,
+          "title": "Practical Generative AI",
+          "instructor": "anonymous",
+          "duration": "5h 20m",
+          "price": 59.99,
+          "thumbnail": "https://media.calibraint.com/calibraint-wordpress/wp-content/uploads/2024/06/28062728/GenAI-Calibraint-1024x466.webp",
+          "trailer": "https://www.youtube.com/embed/rwF-X5STYks",
+          "description": "Hands-on guide to prompts, embeddings, and building LLM-powered apps (conceptual — no API keys needed)."
+        }
+      ]
+    },
+    {
+      "name": "Theory of Computation",
+      "courses": [
+        {
+          "id": 301,
+          "title": "Automata & Languages",
+          "instructor": "anonymous",
+          "duration": "6h 45m",
+          "price": 29.99,
+          "thumbnail": "https://images.prismic.io/turing/aAs2kfIqRLdaBmZw_188-Blog_Hero_1232-770.png?auto=format%2Ccompress&w=1080&fit=max",
+          "trailer": "https://www.youtube.com/embed/xb6ZKfH2ZxU",
+          "description": "Dive into DFAs, NFAs, regular languages, and context-free grammars with crisp visuals."
+        },
+        {
+          "id": 302,
+          "title": "Turing Machines & Decidability",
+          "instructor": "anonymous",
+          "duration": "7h 30m",
+          "price": 34.99,
+          "thumbnail": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*iTVLVMJCofZ2NWf5W9kV5g.png",
+          "trailer": "https://www.youtube.com/embed/dNRDvLACg5Q",
+          "description": "Understand Turing machines, halting problem, and complexity classes at an intuitive level."
+        },
+        {
+          "id": 303,
+          "title": "Complexity Theory Primer",
+          "instructor": "anonymous",
+          "duration": "4h 10m",
+          "price": 24.99,
+          "thumbnail": "https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29kaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500",
+          "trailer": "https://www.youtube.com/embed/ei-A_wy5Yxw",
+          "description": "Explore P vs NP, reductions, and completeness proofs with worked examples."
+        }
+      ]
+    }
+  ]
+}

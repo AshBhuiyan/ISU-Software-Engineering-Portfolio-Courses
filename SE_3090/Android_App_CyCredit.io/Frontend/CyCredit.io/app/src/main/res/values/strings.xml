@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CyCredit.io</string>
+    <string name="back">Back</string>
+    <string name="create">Create</string>
+    <string name="join">Join</string>
+    <string name="guilds_title">Guilds</string>
+    <string name="create_guild">Create Guild</string>
+    <string name="join_guild">Join Guild</string>
+    <string name="guild_name">Guild name</string>
+</resources>

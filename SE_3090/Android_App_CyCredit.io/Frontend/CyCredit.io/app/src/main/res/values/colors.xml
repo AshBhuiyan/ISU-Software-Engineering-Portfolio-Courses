@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PlayStation Color Palette -->
+    <color name="ps_primary_blue">#0041A8</color>
+    <color name="ps_primary_blue_dark">#021839</color>
+    <color name="ps_primary_blue_light">#1166FF</color>
+    <color name="ps_background">#050C17</color>
+    <color name="ps_background_secondary">#071021</color>
+    <color name="ps_card">#111B2B</color>
+    <color name="ps_card_elevated">#1A2535</color>
+    <color name="ps_accent">#00C8FF</color>
+    <color name="ps_text_primary">#FFFFFF</color>
+    <color name="ps_text_secondary">#B0C4D8</color>
+    <color name="ps_text_tertiary">#7A8FA3</color>
+    <color name="ps_border_subtle">#1E2A3B</color>
+    <color name="ps_divider">#1E2A3B</color>
+    <color name="ps_overlay">#80000000</color>
+    <color name="ps_success_green">#00FF88</color>
+    <color name="ps_error_red">#FF6B6B</color>
+    
+    <!-- Legacy colors (kept for compatibility) -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="teal_700">#018786</color>
+    
+    <!-- Material Design colors mapped to PS palette -->
+    <color name="colorPrimary">@color/ps_primary_blue</color>
+    <color name="colorPrimaryDark">@color/ps_primary_blue_dark</color>
+    <color name="colorAccent">@color/ps_accent</color>
+    <color name="colorBackground">@color/ps_background</color>
+    <color name="colorSurface">@color/ps_card</color>
+    <color name="colorOnPrimary">@color/ps_text_primary</color>
+    <color name="colorOnBackground">@color/ps_text_primary</color>
+    <color name="colorOnSurface">@color/ps_text_primary</color>
+    
+    <!-- Login screen bar color (exact match) -->
+    <color name="login_bar_solid">#021839</color>
+    
+    <!-- Exact bar color from swatch -->
+    <color name="cy_bar_exact">#070C16</color>
+</resources>

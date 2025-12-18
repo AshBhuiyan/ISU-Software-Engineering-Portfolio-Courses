@@ -1,0 +1,19 @@
+{
+  "name": "activity07",
+  "version": "1.0.0",
+  "description": "Activity 07 - NodeJS & Express Activity with REST API Methods",
+  "main": "mbhuiyan_Activity07.js",
+  "scripts": {
+    "start": "node mbhuiyan_Activity07.js",
+    "dev": "nodemon mbhuiyan_Activity07.js",
+    "test": "nodemon mbhuiyan_Activity07.js"
+  },
+  "author": "Ash Bhuiyan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.9"
+  }
+}

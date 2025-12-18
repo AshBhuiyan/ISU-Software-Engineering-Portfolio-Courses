@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="title-wrap">
+        <h1 class="app-title">WebSocket Chat</h1>
+        <span class="badge">Live</span>
+      </div>
+      <p class="author">Author: <strong>Ash Bhuiyan (mbhuiyan)</strong></p>
+    </header>
+
+    <section class="card connect-card">
+      <div class="row">
+        <label for="wsserver" class="label">Server URL</label>
+        <input type="text" id="wsserver" class="input" placeholder="ws://localhost:8080/chat/"
+          value="ws://localhost:8080/chat/" />
+      </div>
+      <div class="row">
+        <label for="username" class="label">Username</label>
+        <div class="input-group">
+          <input type="text" id="username" class="input" placeholder="Your name" />
+          <button type="button" class="btn primary" onclick="connect();">
+            <span class="dot" id="status-dot" aria-hidden="true"></span>
+            <span id="status-text">Connect</span>
+          </button>
+        </div>
+      </div>
+      <p class="hint">Tip: use a unique username; messages will appear below.</p>
+    </section>
+
+    <section class="card chat-card">
+      <label for="log" class="label">Conversation</label>
+      <textarea readonly rows="12" id="log" class="log" placeholder="Waiting for messages…"></textarea>
+
+      <div class="send-row">
+        <input type="text" id="msg" class="input" placeholder="Type a message and press Enter…" />
+        <button type="button" class="btn" onclick="send();">Send</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="websocket.js"></script>
+</body>
+
+</html>

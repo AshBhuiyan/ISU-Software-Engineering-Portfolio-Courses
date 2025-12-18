@@ -1,0 +1,126 @@
+<!-- Authors Page -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NM_1 – Authors</title>
+
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    
+    <link href="assets/styles.css" rel="stylesheet" />
+
+    
+    <style>
+        .page-authors .author-card .card-img-top {
+            width: 100%;
+            height: auto;
+            max-height: none;
+            object-fit: contain;
+            background: transparent;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+</head>
+
+<body id="top" class="page-authors">
+
+    <!-- Meta bar -->
+    <section class="meta-bar py-2">
+        <div class="container d-flex flex-wrap gap-3 align-items-center">
+            <span class="badge-soft">Team NM_1</span>
+            <span>Course: SE/COM S 3190</span>
+            <span class="ms-auto">Date: Sep 22, 2025</span>
+        </div>
+    </section>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-semibold" href="authors.html">NM_1 Catalog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="products-member1.html">Products 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products-member2.html">Products 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="authors.html">Authors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero py-5">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold mb-2">Meet the Authors</h1>
+            <p class="lead mb-0">A Quick Intro to the Folks Behind NM_1</p>
+        </div>
+    </header>
+
+    <!-- Authors Grid -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Mekhi -->
+                <div class="col-md-6">
+                    <div class="card author-card product-card h-100">
+                        <img src="assets/images/mekhi.jpg" class="card-img-top" alt="Mekhi" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Mekhi San</h5>
+                            <p class="mb-2">Email: <a class="text-decoration-none"
+                                    href="mailto:sanm20@iastate.edu">sanm20@iastate.edu</a></p>
+                            <p class="mb-0">Software Engineering student at Iowa State University who enjoys building
+                                practical, user-focused projects.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ash -->
+                <div class="col-md-6">
+                    <div class="card author-card product-card h-100">
+                        <img src="assets/images/ash.jpeg" class="card-img-top" alt="Ash" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Ash Bhuiyan</h5>
+                            <p class="mb-2">Email: <a class="text-decoration-none"
+                                    href="mailto:mbhuiyan@iastate.edu">mbhuiyan@iastate.edu</a></p>
+                            <p class="mb-0">Software Engineering student at Iowa State University who enjoys frontend
+                                design and making apps user-friendly.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer text-center py-4 mt-5">
+        <div class="container small">
+            Team: NM_1 (Mekhi &amp; Ash)
+        </div>
+    </footer>
+
+    <!-- Auto-highlight active nav link -->
+    <script>
+        (function () {
+            const here = location.pathname.split('/').pop() || 'authors.html';
+            document.querySelectorAll('.navbar .nav-link').forEach(a => {
+                const href = a.getAttribute('href');
+                if (href && here === href) a.classList.add('active');
+            });
+        })();
+    </script>
+</body>
+</html>

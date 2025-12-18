@@ -1,0 +1,30 @@
+[
+    {
+    "id": "parks1",
+    "building": "Parks Library",
+    "description": "Main library with study spaces, IT services, and computer labs.",
+    "hours": "7am - Midnight",
+    "img": "assets/images/parks1.jpg"
+  },
+  {
+    "id": "parks2",
+    "building": "Parks Library",
+    "description": "Quiet floors and group study rooms available.",
+    "hours": "7am - Midnight",
+    "img": "assets/images/parks2.jpg"
+  },
+  {
+    "id": "carver1",
+    "building": "Carver Hall",
+    "description": "Home to the Math and Statistics departments.",
+    "hours": "8am - 10pm",
+    "img": "assets/images/carver1.jpg"
+  },
+  {
+    "id": "carver2",
+    "building": "Carver Hall",
+    "description": "Large lecture halls used for general education courses.",
+    "hours": "8am - 10pm",
+    "img": "assets/images/carver2.jpg"
+  }
+]

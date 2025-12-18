@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/map_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ps_background_gradient"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Header Card (PS-style) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/header_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="8dp"
+        style="@style/PsHeaderCard"
+        app:cardCornerRadius="@dimen/map_corner_radius"
+        app:cardElevation="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:paddingTop="12dp">
+
+                    <!-- Top row: Time/Status (left) and Handle bar (center) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <!-- Time/Status area (left) -->
+                        <TextView
+                            android:id="@+id/header_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:10"
+                            android:textColor="@color/ps_text_secondary"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <!-- Handle bar (center) -->
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="4dp"
+                            android:layout_weight="1"
+                            android:background="@color/ps_border_subtle"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp" />
+
+                        <!-- Empty space for right alignment -->
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp" />
+                    </LinearLayout>
+
+                    <!-- Main content row: Avatar, Name, Icons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- User Avatar Circle -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="2dp"
+                            android:layout_marginEnd="12dp">
+
+                            <ImageView
+                                android:id="@+id/header_avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@android:drawable/ic_menu_gallery"
+                                android:background="@color/ps_primary_blue" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- User Name -->
+                        <TextView
+                            android:id="@+id/header_username"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="User"
+                            android:textColor="@color/ps_text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="normal"
+                            android:ellipsize="end"
+                            android:maxLines="1" />
+
+                        <!-- Public Chat Icon -->
+                        <ImageButton
+                            android:id="@+id/btn_public_chat"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="Public Chat"
+                            android:src="@drawable/ic_chat_bubble"
+                            android:tint="@color/ps_text_primary"
+                            android:padding="8dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <!-- Notification Bell Icon -->
+                        <ImageButton
+                            android:id="@+id/btn_notifications"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="Notifications"
+                            android:src="@drawable/ic_bell"
+                            android:tint="@color/ps_text_primary"
+                            android:padding="8dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <!-- Settings Gear Icon -->
+                        <ImageButton
+                            android:id="@+id/btn_settings"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="Settings"
+                            android:src="@drawable/ic_gear"
+                            android:tint="@color/ps_text_primary"
+                            android:padding="8dp" />
+                    </LinearLayout>
+
+                    <!-- HUD Stats Row -->
+                    <LinearLayout
+                        android:id="@+id/hud_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Turns"
+                                style="@style/PsCaptionText" />
+
+                            <TextView
+                                android:id="@+id/hud_turns"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10"
+                                android:textColor="@color/ps_text_primary"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/ps_border_subtle"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cash"
+                                style="@style/PsCaptionText" />
+
+                            <TextView
+                                android:id="@+id/hud_cash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$1000"
+                                android:textColor="@color/ps_text_primary"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/ps_border_subtle"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="end">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Score"
+                                style="@style/PsCaptionText" />
+
+                            <TextView
+                                android:id="@+id/hud_score"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:textColor="@color/ps_text_primary"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Grass background - full-bleed edge-to-edge with consistent gutters and rounded corners -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/map_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:cardCornerRadius="@dimen/map_corner_radius"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/header_card"
+        app:layout_constraintBottom_toTopOf="@id/action_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Grass background image -->
+        <ImageView
+            android:id="@+id/map_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_map_grass_bgd"
+            android:scaleType="centerCrop"
+            android:contentDescription="Map background" />
+
+        <!-- Map pins overlay -->
+        <FrameLayout
+            android:id="@+id/overlay_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Bottom Navigation Bar (PS-style) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/action_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ps_card_bottom_rounded"
+        android:elevation="12dp"
+        style="@style/PsBottomNav"
+        app:itemIconTint="@drawable/ps_bottom_nav_selector"
+        app:itemTextColor="@drawable/ps_bottom_nav_selector"
+        app:itemRippleColor="@color/ps_accent"
+        app:menu="@menu/map_bottom_nav"
+        app:labelVisibilityMode="labeled"
+        app:itemIconSize="24dp"
+        app:itemTextAppearanceActive="@style/PsBottomNavTextActive"
+        app:itemTextAppearanceInactive="@style/PsBottomNavTextInactive"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- End Month Button (if turns = 0) - positioned over map -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_end_month"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="End Month"
+        style="@style/PsPrimaryButton"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/action_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

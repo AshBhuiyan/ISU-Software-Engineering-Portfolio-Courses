@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"/>
+<title>Cycredit.io</title>
+<style>
+  :root { --bg:#07080c; --gold:#F1BE48; --gold-deep:#8C6A17; --gold-soft:#F7D885; --text:#EAEAEA; }
+  html,body{height:100%;width:100%;margin:0;padding:0;background:#070C16;color:var(--text);font-family:ui-sans-serif,system-ui,Segoe UI,Arial;overflow:hidden}
+  .wrap{height:100vh;width:100vw;padding:0;display:grid;place-items:stretch}
+  .frame{height:100vh;width:100vw;max-height:100vh;max-width:100vw;border-radius:0;box-shadow:none;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;background:linear-gradient(145deg,#0b0c12,#0e1016)}
+  .top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.06)}
+  h1{margin:0;font-size:18px;letter-spacing:.14em;opacity:.9;text-transform:uppercase}
+  .cta{display:inline-block;background:var(--gold);color:#11141b;font-weight:800;text-decoration:none;border-radius:10px;padding:10px 14px}
+  .cta:hover{filter:brightness(1.05)}
+  /* Top-right Info button (replaces old Start) */
+  #infoBtn{padding:10px 16px;border-radius:14px;background:transparent;color:#ffd166;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(6px);font-weight:600;font-size:14px;cursor:pointer;font-family:inherit}
+  #infoBtn:hover{background:rgba(255,255,255,0.1)}
+  /* Start Game button - Iowa State colors (Cardinal & Gold) - toned down red */
+  /* Positioned just below CYCREDIT logo */
+  #ctaStart{position:fixed;left:50%;transform:translateX(-50%);top:calc(80vh + 20px);display:inline-flex;align-items:center;justify-content:center;min-width:200px;height:48px;padding:0 20px;border-radius:24px;font-weight:bold;font-size:15px;letter-spacing:.01em;text-decoration:none;color:#F1BE48;background:#9B0D24;border:2px solid #F1BE48;box-shadow:0 4px 12px rgba(155,13,36,.3),0 0 8px rgba(241,190,72,.25);z-index:50;transition:all .2s ease}
+  #ctaStart:active{transform:translateX(-50%) scale(.98);opacity:.9;box-shadow:0 2px 6px rgba(155,13,36,.25),0 0 4px rgba(241,190,72,.2)}
+  #ctaStart:hover{background:#8B0A1F;box-shadow:0 6px 16px rgba(155,13,36,.4),0 0 12px rgba(241,190,72,.3)}
+  .stage{width:100%;height:100%;display:grid;place-items:center;background:#0b0c12}
+  svg{width:100%;height:100%;display:block;object-fit:cover}
+  @keyframes arrowSweep{0%{opacity:.25;transform:translateX(-18px)}60%{opacity:1;transform:translateX(0)}100%{opacity:.92;transform:translateX(4px)}}
+  @keyframes xpFill{0%{transform:scaleY(0)}10%{transform:scaleY(.05)}90%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+  @keyframes xpSpark{0%,70%{opacity:0;transform:translateY(0) scale(.7)}85%{opacity:1;transform:translateY(-12px) scale(1)}100%{opacity:0;transform:translateY(-20px) scale(1.05)}}
+  .arrow{animation:arrowSweep 1.4s ease .15s infinite alternate}
+  .label{font:900 clamp(48px,9vw,132px) 'Arial Black',Impact,system-ui,sans-serif;letter-spacing:5px}
+  .subtitle{font:600 clamp(14px,2.2vw,28px) ui-sans-serif,system-ui,Segoe UI,Arial;letter-spacing:2px;opacity:.9}
+  /* Footer positioned above the button */
+  .footer{display:flex;justify-content:center;gap:16px;align-items:center;padding:16px 20px;padding-bottom:calc(env(safe-area-inset-bottom)+140px);border-top:1px solid rgba(255,255,255,.06)}
+  .footer .mini{opacity:.85}
+  /* Kill any previous fixed max sizes */
+  .container,.card,.frame{max-width:none!important;max-height:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="frame">
+    <div class="top">
+      <h1>Cycredit.io</h1>
+      <!-- Top bar right: Info -->
+      <button id="infoBtn" class="pill ghost">Info</button>
+    </div>
+    <div class="stage">
+      <svg id="hero" viewBox="0 0 1200 800" aria-label="Cycredit XP hero">
+        <defs>
+          <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M0 24 L24 0 M-6 18 L6 6 M18 30 L30 18" stroke="#1a1f2a" stroke-opacity=".35" stroke-width="1"/>
+          </pattern>
+          <radialGradient id="goldGlow" cx="50%" cy="50%" r="60%">
+            <stop offset="0%" stop-color="#FDE4A6" stop-opacity="1"/>
+            <stop offset="60%" stop-color="var(--gold)" stop-opacity=".45"/>
+            <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+          </radialGradient>
+          <clipPath id="cardInner">
+            <rect x="0" y="0" rx="22" ry="22" width="420" height="260"/>
+          </clipPath>
+          <filter id="embossGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F1BE48" flood-opacity=".4"/>
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity=".35"/>
+          </filter>
+          <linearGradient id="xpGrad" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#8C6A17"/>
+            <stop offset="100%" stop-color="var(--gold)"/>
+          </linearGradient>
+        </defs>
+
+        <rect width="1200" height="800" fill="url(#grid)"/>
+        <rect width="1200" height="800" fill="#0b0c12" opacity=".9"/>
+        <circle cx="420" cy="360" r="260" fill="url(#goldGlow)" opacity=".18"/>
+
+        <!-- Rising XP bars with arrow -->
+        <g transform="translate(620,270)">
+          <path class="arrow" d="M-40,230 C60,160 200,80 340,10 L320,60 L420,0 L340,-90 L330,-20 C190,60 60,140 -40,210 Z"
+                fill="var(--gold)" opacity=".9"/>
+          <g>
+            <g transform="translate(0,0)">
+              <rect x="0" y="30" width="64" height="220" rx="16" fill="none" stroke="var(--gold-deep)" stroke-opacity=".45" stroke-width="3"/>
+              <rect x="0" y="30" width="64" height="220" rx="16" fill="url(#xpGrad)" style="transform-origin:32px 250px; animation: xpFill 2.6s ease-in-out infinite;"/>
+              <circle cx="32" cy="28" r="6" fill="var(--gold-soft)" style="animation: xpSpark 2.6s ease-in-out infinite;"/>
+            </g>
+            <g transform="translate(92,0)">
+              <rect x="0" y="10" width="64" height="240" rx="16" fill="none" stroke="var(--gold-deep)" stroke-opacity=".45" stroke-width="3"/>
+              <rect x="0" y="10" width="64" height="240" rx="16" fill="url(#xpGrad)" style="transform-origin:32px 250px; animation: xpFill 3s .25s ease-in-out infinite;"/>
+              <circle cx="32" cy="8" r="6" fill="var(--gold-soft)" style="animation: xpSpark 3s .25s ease-in-out infinite;"/>
+            </g>
+            <g transform="translate(184,-10)">
+              <rect x="0" y="0" width="64" height="260" rx="16" fill="none" stroke="var(--gold-deep)" stroke-opacity=".45" stroke-width="3"/>
+              <rect x="0" y="0" width="64" height="260" rx="16" fill="url(#xpGrad)" style="transform-origin:32px 260px; animation: xpFill 3.4s .5s ease-in-out infinite;"/>
+              <circle cx="32" cy="-2" r="6" fill="var(--gold-soft)" style="animation: xpSpark 3.4s .5s ease-in-out infinite;"/>
+            </g>
+            <g transform="translate(276,-30)">
+              <rect x="0" y="0" width="64" height="280" rx="20" fill="none" stroke="var(--gold-deep)" stroke-opacity=".45" stroke-width="3"/>
+              <rect x="0" y="0" width="64" height="280" rx="20" fill="url(#xpGrad)" style="transform-origin:32px 280px; animation: xpFill 3.8s .75s ease-in-out infinite;"/>
+              <circle cx="32" cy="-2" r="6" fill="var(--gold-soft)" style="animation: xpSpark 3.8s .75s ease-in-out infinite;"/>
+            </g>
+          </g>
+        </g>
+
+        <!-- Credit card with rounded corners + image from assets -->
+        <g transform="translate(220,250)">
+          <rect x="0" y="0" rx="28" ry="28" width="420" height="260" fill="#11141b" stroke="var(--gold)" stroke-width="6" filter="url(#embossGlow)"/>
+          <clipPath id="clipCard"><rect x="0" y="0" rx="28" ry="28" width="420" height="260"/></clipPath>
+          <image x="0" y="0" width="420" height="260" preserveAspectRatio="xMidYMid slice"
+                 href="hero_card.jpg" clip-path="url(#clipCard)"/>
+        </g>
+
+        <!-- Footer branding -->
+        <g transform="translate(120,640)">
+          <text class="label" x="0" y="0" fill="var(--gold)" style="filter:drop-shadow(0 0 8px rgba(241,190,72,.45))">CYCREDIT</text>
+          <text class="subtitle" x="6" y="42" fill="#e6e6e6">earn XP, build credit — play to progress</text>
+        </g>
+      </svg>
+    </div>
+    <div class="footer">
+      <span class="mini">Tap <strong>Start Game</strong> to continue</span>
+    </div>
+  </div>
+  <!-- Start Game button - styled like leaderboard "Back to Map" -->
+  <a id="ctaStart" href="app://start" aria-label="Start Game">Start Game</a>
+</div>
+<script>
+  document.getElementById('infoBtn')?.addEventListener('click', () => {
+    window.location.href = 'app://info';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ps_background_gradient"
+    tools:context=".SignupActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- Logo/Title Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CyCredit.io"
+                android:textColor="@color/ps_text_primary"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="16dp"
+                android:letterSpacing="-0.02" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Account"
+                android:textColor="@color/ps_text_secondary"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Input Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PsCard"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <!-- Username -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        style="@style/PsInput"
+                        android:hint="Username">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signup_username_edt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textColor="@color/ps_text_primary"
+                            android:textSize="16sp"
+                            android:minHeight="56dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Password -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        style="@style/PsInput"
+                        android:hint="Password">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signup_password_edt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:textColor="@color/ps_text_primary"
+                            android:textSize="16sp"
+                            android:minHeight="56dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Password Strength Feedback -->
+                    <TextView
+                        android:id="@+id/password_feedback_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ps_accent"
+                        android:textSize="14sp"
+                        android:padding="4dp"
+                        android:layout_marginBottom="8dp"
+                        android:text=""
+                        style="@style/PsBodyText" />
+
+                    <!-- Confirm Password -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        style="@style/PsInput"
+                        android:hint="Confirm Password">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signup_confirm_edt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:textColor="@color/ps_text_primary"
+                            android:textSize="16sp"
+                            android:minHeight="56dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Primary Action Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:baselineAligned="false">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/signup_login_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:text="Login"
+                            style="@style/PsSecondaryButton" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/signup_signup_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:text="Signup"
+                            style="@style/PsPrimaryButton" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Back Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:minWidth="120dp"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:text="Back"
+                android:backgroundTint="@android:color/transparent"
+                app:backgroundTint="@android:color/transparent"
+                style="@style/PsSecondaryButton" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

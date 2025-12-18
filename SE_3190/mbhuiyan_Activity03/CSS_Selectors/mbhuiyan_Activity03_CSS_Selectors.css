@@ -1,0 +1,90 @@
+/* Tag selectors */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: #fafafa;
+  color: #222;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(150, 150, 150);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  margin: 6px 0 12px 0;
+}
+
+/* Class selectors */
+.abilities {
+  font-weight: bold;
+  background-color: lightgray;
+  padding: 5px;
+}
+
+.bio {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.superhero-title {
+  background-color: #5a6583;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+/* ID selectors */
+#wonder-woman {
+  border: 2px solid rgb(255, 0, 0);
+  font-size: 1.8em;
+}
+
+#spider-man {
+  border: 2px solid rgb(0, 255, 0);
+  text-shadow: 2px 2px 5px gray;
+}
+
+/* hover effect */
+#wonder-woman:hover,
+#spider-man:hover {
+  border-width: 4px;
+  border-color: black;
+}
+
+/* button style */
+.details-btn {
+  background-color: orange;
+  border-radius: 12px;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  margin: 8px 0 20px 0;
+}
+
+.details-btn:hover {
+  background-color: darkorange;
+}

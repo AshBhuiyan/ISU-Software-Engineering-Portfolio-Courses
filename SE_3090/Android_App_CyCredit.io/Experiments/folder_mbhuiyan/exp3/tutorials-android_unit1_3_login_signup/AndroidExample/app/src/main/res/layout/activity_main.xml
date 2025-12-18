@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <!-- Screen title ("Home Page" or "Welcome") -->
+    <TextView
+        android:id="@+id/main_msg_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home Page"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="28sp"
+        android:textColor="#3F51B5"
+        android:gravity="center" />
+
+    <!-- Username appears after successful login -->
+    <TextView
+        android:id="@+id/main_username_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="username"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
+        android:textSize="22sp"
+        android:textColor="#000000"
+        android:gravity="center" />
+
+    <!-- Login -->
+    <Button
+        android:id="@+id/main_login_btn"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        android:backgroundTint="#3F51B5"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp" />
+
+    <!-- Signup -->
+    <Button
+        android:id="@+id/main_signup_btn"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Signup"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        android:backgroundTint="#009688"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp" />
+
+    <!-- Logout (only shown after login) -->
+    <Button
+        android:id="@+id/main_logout_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:visibility="gone"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

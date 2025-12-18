@@ -1,0 +1,304 @@
+<!-- 
+  Page 3 - ISU Campus Explorer
+  Author: Mekhi San
+  Student ID: 810968272
+  COM S 3190 - Fall 2025 Midterm Project
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parks Library – ISU Campus Explorer</title>
+
+  <!-- Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/theme.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    /* Top gallery */
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 1rem;
+      scroll-snap-type: x mandatory;
+      justify-content: center;
+    }
+
+    .gallery img {
+      height: 230px;
+      border-radius: 12px;
+      scroll-snap-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    }
+
+    /* Video */
+    .video-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-video {
+      width: 85%;
+      max-height: 550px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      object-fit: cover;
+    }
+
+    .video-credit {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+
+    .video-credit a {
+      color: #aad4ff;
+      text-decoration: none;
+    }
+
+    .video-credit a:hover {
+      text-decoration: underline;
+    }
+
+    /* Floor gallery */
+    .floor-gallery {
+      text-align: center;
+    }
+
+    .floor-gallery .floor-item {
+      display: inline-block;
+      margin: 0 12px;
+      text-align: center;
+      scroll-snap-align: center;
+      cursor: pointer;
+    }
+
+    /* Updated uniform sizing for floor maps */
+    .floor-gallery img {
+      width: 260px;
+      height: 340px;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background-color: white;
+    }
+
+    .floor-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    }
+
+    .highlight-floor {
+      outline: 4px solid #007bff;
+      outline-offset: 3px;
+    }
+
+    /* Hidden section */
+    #floorDisplay {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    #floorDisplay.visible {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="index.html">ISU Campus Explorer</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="page2.html">Map</a></li>
+          <li class="nav-item"><a class="nav-link active" href="page3.html">Library</a></li>
+          <li class="nav-item"><a class="nav-link" href="page4.html">Carver</a></li>
+          <li class="nav-item"><a class="nav-link" href="authors.html">Authors</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Top Image Gallery -->
+  <section class="bg-white border-bottom">
+    <div class="container py-4 text-center">
+      <h2 class="fw-bold mb-3">Parks Library</h2>
+      <p class="text-muted">Explore the heart of ISU’s academic resources and study spaces.</p>
+
+      <div class="gallery">
+        <img src="assets/images/parks1.jpeg" alt="Parks Library 1">
+        <img src="assets/images/parks2.jpg" alt="Parks Library 2">
+        <img src="assets/images/parks3.jpeg" alt="Parks Library 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Autoplay Video with Credit Overlay -->
+  <section class="text-center bg-light py-4 border-bottom">
+    <div class="video-wrapper">
+      <video class="hero-video" src="assets/videos/parksvideo.mp4" autoplay loop muted playsinline></video>
+      <div class="video-credit">
+        Video credit: <a href="https://www.facebook.com/iowastateu.library/videos/1990034604835051/" target="_blank">Iowa State University Library</a><br>
+        Inspired by Class Activity 02
+      </div>
+    </div>
+  </section>
+
+  <!-- Room Input -->
+  <section class="bg-white py-3 border-bottom">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-md-2">
+          <input id="roomInput" type="text" class="form-control text-center" placeholder="Room #">
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-primary w-100" onclick="showRoomInfo()">Go</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floor Info Section (hidden until click) -->
+  <main class="py-5">
+    <div class="container text-center">
+      <div id="floorDisplay">
+        <div id="floorInfo"></div>
+        <div class="mt-4">
+          <img id="floorImage" class="img-fluid rounded shadow-sm" style="max-width:80%;">
+        </div>
+      </div>
+
+      <!-- Scrollable Floor Gallery -->
+      <div class="floor-gallery mt-5">
+        <h5 class="fw-semibold mb-3">Floor Maps</h5>
+        <div class="d-flex overflow-auto px-3" style="scroll-snap-type:x mandatory;">
+          <div class="floor-item" onclick="displayRoom('050')">
+            <img id="img-lower" src="assets/images/parkslower.jpg" alt="Lower Level">
+            <div class="mt-2 fw-medium">Lower Level</div>
+          </div>
+          <div class="floor-item" onclick="displayRoom('150')">
+            <img id="img-level1" src="assets/images/parksfloor.jpeg" alt="Level 1">
+            <div class="mt-2 fw-medium">Level 1</div>
+          </div>
+          <div class="floor-item" onclick="displayRoom('250')">
+            <img id="img-level2" src="assets/images/parksfloor2.png" alt="Level 2">
+            <div class="mt-2 fw-medium">Level 2</div>
+          </div>
+          <div class="floor-item" onclick="displayRoom('350')">
+            <img id="img-level3" src="assets/images/parksfloor3.png" alt="Level 3">
+            <div class="mt-2 fw-medium">Level 3</div>
+          </div>
+          <div class="floor-item" onclick="displayRoom('450')">
+            <img id="img-level4" src="assets/images/parksfloor4.png" alt="Level 4">
+            <div class="mt-2 fw-medium">Level 4</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="page2.html" class="btn btn-secondary">← Back to Map</a>
+      </div>
+    </div>
+  </main>
+
+    <!-- Footer -->
+
+    <footer class="site-footer text-center py-4 mt-5">
+    <div class="container small">Team NM_1 — Mekhi &amp; Ash</div>
+        </footer>
+
+  <!-- JS Logic -->
+  <script>
+    const floorDescriptions = {
+      lower: "Maps, media, and microforms; Studio 2B; IT Solution Center (Room 31); Library IT Help Desk; International Nest; and Group Study Room 03.",
+      level1: "Main desk, Fireplace Reading Room, Bookends Café, classrooms (134–198), Central Parks, Tech Lending, study rooms, and restrooms.",
+      level2: "Study Abroad Center 281, Reading Room 298, individual study rooms, printers/computers, and restrooms.",
+      level3: "Dean’s Office 302, group study rooms, study carrels, call numbers A–DR, and restrooms.",
+      level4: "Special Collections & University Archives 403, classrooms 405–450, preservation department, and restrooms."
+    };
+
+    const floorImages = {
+      lower: "assets/images/parkslower.jpg",
+      level1: "assets/images/parksfloor.jpeg",
+      level2: "assets/images/parksfloor2.png",
+      level3: "assets/images/parksfloor3.png",
+      level4: "assets/images/parksfloor4.png"
+    };
+
+    function showRoomInfo() {
+      const input = document.getElementById("roomInput").value.trim();
+      displayRoom(input);
+    }
+
+    function displayRoom(room) {
+      const floorDisplay = document.getElementById("floorDisplay");
+      const floorInfo = document.getElementById("floorInfo");
+      const floorImage = document.getElementById("floorImage");
+
+      // Reset highlights
+      document.querySelectorAll(".floor-gallery img").forEach(img => img.classList.remove("highlight-floor"));
+
+      const num = parseInt(room);
+      if (isNaN(num)) {
+        alert("Please enter a valid 3–4 digit room number starting with a zero.");
+        return;
+      }
+
+      let level = "";
+      if (num < 100) level = "lower";
+      else if (num < 200) level = "level1";
+      else if (num < 300) level = "level2";
+      else if (num < 400) level = "level3";
+      else if (num < 500) level = "level4";
+      else {
+        alert("Room not found in Parks Library.");
+        return;
+      }
+
+      floorInfo.innerHTML = `
+        <h4 class="fw-semibold text-primary">Floor: ${level === "lower" ? "Lower Level" : level.replace("level", "Level ")}</h4>
+        <p class="mt-2">${floorDescriptions[level]}</p>
+      `;
+      floorImage.src = floorImages[level];
+
+      floorDisplay.classList.add("visible");
+
+      const highlight = document.getElementById(`img-${level}`);
+      if (highlight) highlight.classList.add("highlight-floor");
+
+      floorDisplay.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

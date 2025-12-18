@@ -1,0 +1,8 @@
+/* Stylesheet for Team Member 2 */
+/* ISU Campus Explorer - Member2 Styles (Ash Bhuiyan) */
+.card {
+  border: 2px solid #ddd;
+}
+.navbar {
+  background: linear-gradient(to right, #990000, #ffcc00);
+}

@@ -1,0 +1,1588 @@
+[{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b004"
+  },
+  "serialNumber": "G-LYPT",
+  "model": "A380-800",
+  "airline": "British Airways",
+  "seatingCapacity": 580,
+  "status": "Scheduled",
+  "assignedRoutes": [
+    {
+      "item": "DEL-LAX"
+    },
+    {
+      "item": "SFO-LHR"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b005"
+  },
+  "serialNumber": "N827SV",
+  "model": "A330-200",
+  "airline": "SkyValor",
+  "seatingCapacity": 247,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "HKG-SFO"
+    },
+    {
+      "item": "EWR-AUH"
+    },
+    {
+      "item": "DOH-EWR"
+    },
+    {
+      "item": "DXB-JFK"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b006"
+  },
+  "serialNumber": "VT-IBK",
+  "model": "A350-1000",
+  "airline": "Air India",
+  "seatingCapacity": 366,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "EWR-DEL"
+    },
+    {
+      "item": "HKG-IAD"
+    },
+    {
+      "item": "ORD-BOM"
+    },
+    {
+      "item": "EWR-BOM"
+    },
+    {
+      "item": "LAX-HKG"
+    },
+    {
+      "item": "IAD-BOM"
+    },
+    {
+      "item": "SYD-IAD"
+    },
+    {
+      "item": "LAX-BOM"
+    },
+    {
+      "item": "SFO-DEL"
+    },
+    {
+      "item": "LAX-DEL"
+    },
+    {
+      "item": "BLR-IAD"
+    },
+    {
+      "item": "HKG-LAX"
+    },
+    {
+      "item": "EWR-BLR"
+    },
+    {
+      "item": "BOM-JFK"
+    },
+    {
+      "item": "ORD-BLR"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b007"
+  },
+  "serialNumber": "N634DL",
+  "model": "A330-200",
+  "airline": "Delta",
+  "seatingCapacity": 247,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "LHR-ORD"
+    },
+    {
+      "item": "LHR-JFK"
+    },
+    {
+      "item": "IAD-LHR"
+    },
+    {
+      "item": "LAX-LHR"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b008"
+  },
+  "serialNumber": "A6-YRG",
+  "model": "A350-1000",
+  "airline": "Etihad",
+  "seatingCapacity": 366,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "SFO-SIN"
+    },
+    {
+      "item": "IAD-HKG"
+    },
+    {
+      "item": "LAX-SIN"
+    },
+    {
+      "item": "DXB-IAD"
+    },
+    {
+      "item": "AUH-SFO"
+    },
+    {
+      "item": "LAX-AUH"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b009"
+  },
+  "serialNumber": "VT-WQE",
+  "model": "B777-300ER",
+  "airline": "Air India",
+  "seatingCapacity": 396,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "SFO-BLR"
+    },
+    {
+      "item": "SFO-BOM"
+    },
+    {
+      "item": "ORD-DEL"
+    },
+    {
+      "item": "JFK-BOM"
+    },
+    {
+      "item": "IAD-BLR"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b00a"
+  },
+  "serialNumber": "N458UA",
+  "model": "B777-300ER",
+  "airline": "United",
+  "seatingCapacity": 396,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "JFK-HKG"
+    },
+    {
+      "item": "ORD-SYD"
+    },
+    {
+      "item": "JFK-SIN"
+    },
+    {
+      "item": "SYD-ORD"
+    },
+    {
+      "item": "SIN-EWR"
+    },
+    {
+      "item": "DXB-SFO"
+    },
+    {
+      "item": "BLR-LAX"
+    },
+    {
+      "item": "HKG-EWR"
+    },
+    {
+      "item": "LAX-SYD"
+    },
+    {
+      "item": "SIN-SFO"
+    },
+    {
+      "item": "HKG-JFK"
+    },
+    {
+      "item": "SIN-ORD"
+    },
+    {
+      "item": "DEL-LAX"
+    },
+    {
+      "item": "SYD-EWR"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b00b"
+  },
+  "serialNumber": "A7-QPH",
+  "model": "B777-200LR",
+  "airline": "Qatar Airways",
+  "seatingCapacity": 317,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "DOH-SFO"
+    },
+    {
+      "item": "EWR-SIN"
+    },
+    {
+      "item": "HKG-ORD"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b00c"
+  },
+  "serialNumber": "A7-XEW",
+  "model": "A380-800",
+  "airline": "Qatar Airways",
+  "seatingCapacity": 555,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "BOM-SFO"
+    },
+    {
+      "item": "BLR-SFO"
+    },
+    {
+      "item": "JFK-BLR"
+    },
+    {
+      "item": "SYD-LAX"
+    },
+    {
+      "item": "IAD-SYD"
+    },
+    {
+      "item": "EWR-SYD"
+    },
+    {
+      "item": "ORD-DOH"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b00d"
+  },
+  "serialNumber": "A7-VXN",
+  "model": "B787-8",
+  "airline": "Qatar Airways",
+  "seatingCapacity": 242,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "JFK-DOH"
+    },
+    {
+      "item": "DOH-IAD"
+    },
+    {
+      "item": "DOH-JFK"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b00e"
+  },
+  "serialNumber": "N295UA",
+  "model": "B787-8",
+  "airline": "United",
+  "seatingCapacity": 242,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "LHR-EWR"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b00f"
+  },
+  "serialNumber": "N720AA",
+  "model": "B787-9",
+  "airline": "American",
+  "seatingCapacity": 296,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "LHR-SFO"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b010"
+  },
+  "serialNumber": "N872DL",
+  "model": "B767-300",
+  "airline": "Delta",
+  "seatingCapacity": 216,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "EWR-LHR"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b011"
+  },
+  "serialNumber": "N358UA",
+  "model": "B777-200ER",
+  "airline": "United",
+  "seatingCapacity": 314,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "EWR-DXB"
+    },
+    {
+      "item": "SFO-HKG"
+    },
+    {
+      "item": "EWR-DOH"
+    },
+    {
+      "item": "SFO-LHR"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b012"
+  },
+  "serialNumber": "N707SV",
+  "model": "B777-200ER",
+  "airline": "Etihad",
+  "seatingCapacity": 314,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "ORD-AUH"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b013"
+  },
+  "serialNumber": "A7-TOM",
+  "model": "A350-1000",
+  "airline": "Qatar Airways",
+  "seatingCapacity": 366,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "SIN-IAD"
+    },
+    {
+      "item": "DOH-ORD"
+    },
+    {
+      "item": "ORD-SIN"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b014"
+  },
+  "serialNumber": "G-TPET",
+  "model": "A350-1000",
+  "airline": "British Airways",
+  "seatingCapacity": 366,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "IAD-SIN"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b015"
+  },
+  "serialNumber": "A6-FQP",
+  "model": "A380-800",
+  "airline": "Etihad",
+  "seatingCapacity": 555,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "AUH-LAX"
+    },
+    {
+      "item": "BOM-IAD"
+    },
+    {
+      "item": "AUH-IAD"
+    },
+    {
+      "item": "DEL-IAD"
+    },
+    {
+      "item": "IAD-AUH"
+    },
+    {
+      "item": "ORD-HKG"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b016"
+  },
+  "serialNumber": "VT-FFX",
+  "model": "B777-200LR",
+  "airline": "Air India",
+  "seatingCapacity": 317,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "SIN-LAX"
+    },
+    {
+      "item": "JFK-DEL"
+    },
+    {
+      "item": "DEL-JFK"
+    },
+    {
+      "item": "LAX-BLR"
+    },
+    {
+      "item": "SIN-JFK"
+    },
+    {
+      "item": "BLR-EWR"
+    },
+    {
+      "item": "DEL-EWR"
+    },
+    {
+      "item": "BLR-ORD"
+    },
+    {
+      "item": "DEL-ORD"
+    },
+    {
+      "item": "DEL-SFO"
+    },
+    {
+      "item": "BOM-LAX"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b017"
+  },
+  "serialNumber": "A6-VXU",
+  "model": "B777-300ER",
+  "airline": "Emirates",
+  "seatingCapacity": 396,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "LAX-DXB"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b018"
+  },
+  "serialNumber": "N450UA",
+  "model": "B787-9",
+  "airline": "United",
+  "seatingCapacity": 296,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "SFO-SYD"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b019"
+  },
+  "serialNumber": "A6-QQO",
+  "model": "A380-800",
+  "airline": "Emirates",
+  "seatingCapacity": 555,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "IAD-DXB"
+    },
+    {
+      "item": "DXB-JFK"
+    },
+    {
+      "item": "JFK-DXB"
+    },
+    {
+      "item": "ORD-DXB"
+    },
+    {
+      "item": "DXB-LAX"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b01a"
+  },
+  "serialNumber": "N439AA",
+  "model": "B767-300",
+  "airline": "American",
+  "seatingCapacity": 216,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "JFK-LHR"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b01b"
+  },
+  "serialNumber": "N349SV",
+  "model": "B787-10",
+  "airline": "SkyValor",
+  "seatingCapacity": 318,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "IAD-DOH"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b01c"
+  },
+  "serialNumber": "G-VPKV",
+  "model": "B787-8",
+  "airline": "British Airways",
+  "seatingCapacity": 242,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "LHR-IAD"
+    },
+    {
+      "item": "ORD-LHR"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b01d"
+  },
+  "serialNumber": "N433AA",
+  "model": "B777-200ER",
+  "airline": "American",
+  "seatingCapacity": 314,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "AUH-JFK"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b01e"
+  },
+  "serialNumber": "A7-IGN",
+  "model": "B777-300ER",
+  "airline": "Qatar Airways",
+  "seatingCapacity": 396,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "LAX-DOH"
+    },
+    {
+      "item": "DOH-LAX"
+    },
+    {
+      "item": "SFO-DOH"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b01f"
+  },
+  "serialNumber": "N362DL",
+  "model": "A350-900",
+  "airline": "Delta",
+  "seatingCapacity": 325,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "ATL-SYD"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b020"
+  },
+  "serialNumber": "A6-MSN",
+  "model": "B787-10",
+  "airline": "Etihad",
+  "seatingCapacity": 318,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "AUH-EWR"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b021"
+  },
+  "serialNumber": "N923UA",
+  "model": "B787-10",
+  "airline": "United",
+  "seatingCapacity": 318,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "DXB-EWR"
+    },
+    {
+      "item": "LHR-LAX"
+    },
+    {
+      "item": "JFK-DXB"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b022"
+  },
+  "serialNumber": "A6-PTC",
+  "model": "B777-300ER",
+  "airline": "Etihad",
+  "seatingCapacity": 396,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "SFO-AUH"
+    },
+    {
+      "item": "AUH-ORD"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b023"
+  },
+  "serialNumber": "N997SV",
+  "model": "B777-200ER",
+  "airline": "SkyValor",
+  "seatingCapacity": 314,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "JFK-AUH"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b024"
+  },
+  "serialNumber": "A6-QLS",
+  "model": "B777-200LR",
+  "airline": "Emirates",
+  "seatingCapacity": 317,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "DXB-ORD"
+    },
+    {
+      "item": "SFO-DXB"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b025"
+  },
+  "serialNumber": "N218SV",
+  "model": "A321neo",
+  "airline": "SkyValor",
+  "seatingCapacity": 220,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "DTW-RDU"
+    },
+    {
+      "item": "BOS-SFO"
+    },
+    {
+      "item": "ATL-LAS"
+    },
+    {
+      "item": "CVG-LAX"
+    },
+    {
+      "item": "LGA-DFW"
+    },
+    {
+      "item": "PGD-SMF"
+    },
+    {
+      "item": "SMF-SFO"
+    },
+    {
+      "item": "ORD-MIA"
+    },
+    {
+      "item": "DEN-HOU"
+    },
+    {
+      "item": "MIA-MSY"
+    },
+    {
+      "item": "IAH-ATL"
+    },
+    {
+      "item": "SFO-DTW"
+    },
+    {
+      "item": "LAX-SMF"
+    },
+    {
+      "item": "CLT-FLL"
+    },
+    {
+      "item": "FLL-PHX"
+    },
+    {
+      "item": "RDU-MIA"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b026"
+  },
+  "serialNumber": "N507SV",
+  "model": "A319-100",
+  "airline": "SkyValor",
+  "seatingCapacity": 120,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "BWI-PHX"
+    },
+    {
+      "item": "LGA-BWI"
+    },
+    {
+      "item": "CVG-STL"
+    },
+    {
+      "item": "SJC-SAN"
+    },
+    {
+      "item": "AUS-PHX"
+    },
+    {
+      "item": "CLT-DTW"
+    },
+    {
+      "item": "EWR-SMF"
+    },
+    {
+      "item": "MCO-SMF"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b027"
+  },
+  "serialNumber": "N417UA",
+  "model": "B737-700",
+  "airline": "United",
+  "seatingCapacity": 143,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "SFO-DEN"
+    },
+    {
+      "item": "EWR-SJC"
+    },
+    {
+      "item": "LGA-FLL"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b028"
+  },
+  "serialNumber": "N529UA",
+  "model": "A320-200",
+  "airline": "United",
+  "seatingCapacity": 180,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "HOU-DFW"
+    },
+    {
+      "item": "LAS-STL"
+    },
+    {
+      "item": "DTW-BWI"
+    },
+    {
+      "item": "RDU-MDW"
+    },
+    {
+      "item": "MIA-SMF"
+    },
+    {
+      "item": "BOS-SAN"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b029"
+  },
+  "serialNumber": "N740SV",
+  "model": "B737-700",
+  "airline": "SkyValor",
+  "seatingCapacity": 143,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "MDW-ATL"
+    },
+    {
+      "item": "RDU-STL"
+    },
+    {
+      "item": "MSP-EWR"
+    },
+    {
+      "item": "IAD-SAN"
+    },
+    {
+      "item": "IAD-HOU"
+    },
+    {
+      "item": "LGA-IAH"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b02a"
+  },
+  "serialNumber": "N616DL",
+  "model": "B737 MAX 8",
+  "airline": "Delta",
+  "seatingCapacity": 178,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "IAH-DEN"
+    },
+    {
+      "item": "BOS-CLT"
+    },
+    {
+      "item": "SJC-LAS"
+    },
+    {
+      "item": "RSW-SAN"
+    },
+    {
+      "item": "PHX-MCI"
+    },
+    {
+      "item": "LGA-LAS"
+    },
+    {
+      "item": "SAN-MSP"
+    },
+    {
+      "item": "DAL-JFK"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b02b"
+  },
+  "serialNumber": "N532DL",
+  "model": "A321-200",
+  "airline": "Delta",
+  "seatingCapacity": 220,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "PGD-JFK"
+    },
+    {
+      "item": "STL-IAD"
+    },
+    {
+      "item": "DEN-STL"
+    },
+    {
+      "item": "DTW-MDW"
+    },
+    {
+      "item": "ATL-CVG"
+    },
+    {
+      "item": "MIA-CVG"
+    },
+    {
+      "item": "SLC-ORD"
+    },
+    {
+      "item": "LGA-EWR"
+    },
+    {
+      "item": "SLC-MSY"
+    },
+    {
+      "item": "PHX-MCO"
+    },
+    {
+      "item": "BWI-PDX"
+    },
+    {
+      "item": "SMF-RDU"
+    },
+    {
+      "item": "BOS-MCI"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b02c"
+  },
+  "serialNumber": "N347AA",
+  "model": "A321-200",
+  "airline": "American",
+  "seatingCapacity": 220,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "MCI-PGD"
+    },
+    {
+      "item": "MCI-PHX"
+    },
+    {
+      "item": "CVG-PGD"
+    },
+    {
+      "item": "SMF-ATL"
+    },
+    {
+      "item": "ATL-AUS"
+    },
+    {
+      "item": "MCI-CVG"
+    },
+    {
+      "item": "FLL-PHL"
+    },
+    {
+      "item": "CLT-BOS"
+    },
+    {
+      "item": "LAX-BWI"
+    },
+    {
+      "item": "MIA-MDW"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b02d"
+  },
+  "serialNumber": "N527SV",
+  "model": "A320-200",
+  "airline": "SkyValor",
+  "seatingCapacity": 180,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "FLL-CLT"
+    },
+    {
+      "item": "PDX-RDU"
+    },
+    {
+      "item": "DFW-SFO"
+    },
+    {
+      "item": "STL-SAN"
+    },
+    {
+      "item": "STL-JFK"
+    },
+    {
+      "item": "RSW-FLL"
+    },
+    {
+      "item": "HOU-PDX"
+    },
+    {
+      "item": "DEN-SMF"
+    },
+    {
+      "item": "IAD-MSY"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b02e"
+  },
+  "serialNumber": "N420SV",
+  "model": "B737 MAX 8",
+  "airline": "SkyValor",
+  "seatingCapacity": 178,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "MCI-AUS"
+    },
+    {
+      "item": "HOU-LAS"
+    },
+    {
+      "item": "DFW-SAN"
+    },
+    {
+      "item": "MSY-HOU"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b02f"
+  },
+  "serialNumber": "N509AA",
+  "model": "A320-200",
+  "airline": "American",
+  "seatingCapacity": 180,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "EWR-IAD"
+    },
+    {
+      "item": "MSY-SJC"
+    },
+    {
+      "item": "LGA-SLC"
+    },
+    {
+      "item": "HOU-SAN"
+    },
+    {
+      "item": "RSW-IAD"
+    },
+    {
+      "item": "BWI-CVG"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b030"
+  },
+  "serialNumber": "N382AA",
+  "model": "A319-100",
+  "airline": "American",
+  "seatingCapacity": 120,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "SJC-BWI"
+    },
+    {
+      "item": "ORD-LAS"
+    },
+    {
+      "item": "BWI-MSY"
+    },
+    {
+      "item": "STL-MDW"
+    },
+    {
+      "item": "PHL-CLT"
+    },
+    {
+      "item": "MIA-AUS"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b031"
+  },
+  "serialNumber": "N544UA",
+  "model": "B737 MAX 8",
+  "airline": "United",
+  "seatingCapacity": 178,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "MCI-ATL"
+    },
+    {
+      "item": "ORD-SJC"
+    },
+    {
+      "item": "EWR-PHX"
+    },
+    {
+      "item": "DAL-IAD"
+    },
+    {
+      "item": "STL-DEN"
+    },
+    {
+      "item": "FLL-AUS"
+    },
+    {
+      "item": "SJC-DAL"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b032"
+  },
+  "serialNumber": "N385WN",
+  "model": "B737-800",
+  "airline": "Southwest",
+  "seatingCapacity": 160,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "JFK-CLT"
+    },
+    {
+      "item": "MSP-DTW"
+    },
+    {
+      "item": "ATL-DEN"
+    },
+    {
+      "item": "LGA-MCI"
+    },
+    {
+      "item": "MSY-RSW"
+    },
+    {
+      "item": "PHX-SAN"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b033"
+  },
+  "serialNumber": "N531UA",
+  "model": "B737-800",
+  "airline": "United",
+  "seatingCapacity": 160,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "HOU-BWI"
+    },
+    {
+      "item": "MCI-JFK"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b034"
+  },
+  "serialNumber": "N805UA",
+  "model": "A321neo",
+  "airline": "United",
+  "seatingCapacity": 220,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "SJC-DEN"
+    },
+    {
+      "item": "PDX-BOS"
+    },
+    {
+      "item": "ORD-PGD"
+    },
+    {
+      "item": "IAH-MCI"
+    },
+    {
+      "item": "DAL-BOS"
+    },
+    {
+      "item": "MSP-ORD"
+    },
+    {
+      "item": "DTW-ATL"
+    },
+    {
+      "item": "MCO-PGD"
+    },
+    {
+      "item": "PGD-RSW"
+    },
+    {
+      "item": "SMF-LAX"
+    },
+    {
+      "item": "DTW-IAH"
+    },
+    {
+      "item": "STL-ORD"
+    },
+    {
+      "item": "EWR-FLL"
+    },
+    {
+      "item": "MDW-SLC"
+    },
+    {
+      "item": "PHL-DAL"
+    },
+    {
+      "item": "MSY-IAD"
+    },
+    {
+      "item": "SFO-LGA"
+    },
+    {
+      "item": "ORD-MCI"
+    },
+    {
+      "item": "BOS-DFW"
+    },
+    {
+      "item": "CVG-IAH"
+    },
+    {
+      "item": "MIA-ATL"
+    },
+    {
+      "item": "RDU-PHX"
+    },
+    {
+      "item": "AUS-ATL"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b035"
+  },
+  "serialNumber": "N787UA",
+  "model": "A319-100",
+  "airline": "United",
+  "seatingCapacity": 120,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "PGD-MCO"
+    },
+    {
+      "item": "MDW-EWR"
+    },
+    {
+      "item": "RSW-LAS"
+    },
+    {
+      "item": "AUS-DAL"
+    },
+    {
+      "item": "MSP-FLL"
+    },
+    {
+      "item": "LAS-HOU"
+    },
+    {
+      "item": "ATL-HOU"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b036"
+  },
+  "serialNumber": "N490DL",
+  "model": "B737-700",
+  "airline": "Delta",
+  "seatingCapacity": 143,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "HOU-RSW"
+    },
+    {
+      "item": "DEN-ORD"
+    },
+    {
+      "item": "BWI-LAX"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b037"
+  },
+  "serialNumber": "N269AA",
+  "model": "B737-800",
+  "airline": "American",
+  "seatingCapacity": 160,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "DTW-LGA"
+    },
+    {
+      "item": "FLL-HOU"
+    },
+    {
+      "item": "CVG-BWI"
+    },
+    {
+      "item": "LAX-MSY"
+    },
+    {
+      "item": "PHX-DFW"
+    },
+    {
+      "item": "DFW-ORD"
+    },
+    {
+      "item": "SMF-BOS"
+    },
+    {
+      "item": "MCI-IAD"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b038"
+  },
+  "serialNumber": "N325SV",
+  "model": "A321-200",
+  "airline": "SkyValor",
+  "seatingCapacity": 220,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "IAD-MDW"
+    },
+    {
+      "item": "STL-LAX"
+    },
+    {
+      "item": "SLC-PHL"
+    },
+    {
+      "item": "PHX-DEN"
+    },
+    {
+      "item": "DTW-EWR"
+    },
+    {
+      "item": "PDX-PHL"
+    },
+    {
+      "item": "DFW-DTW"
+    },
+    {
+      "item": "CLT-ORD"
+    },
+    {
+      "item": "IAD-FLL"
+    },
+    {
+      "item": "FLL-LAX"
+    },
+    {
+      "item": "CVG-RDU"
+    },
+    {
+      "item": "PGD-HOU"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b039"
+  },
+  "serialNumber": "N168WN",
+  "model": "B737-700",
+  "airline": "Southwest",
+  "seatingCapacity": 143,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "PHL-FLL"
+    },
+    {
+      "item": "JFK-DAL"
+    },
+    {
+      "item": "MIA-LAX"
+    },
+    {
+      "item": "PHL-ORD"
+    },
+    {
+      "item": "BOS-LAX"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b03a"
+  },
+  "serialNumber": "N691SV",
+  "model": "B737-800",
+  "airline": "SkyValor",
+  "seatingCapacity": 160,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "ATL-PDX"
+    },
+    {
+      "item": "MSY-SLC"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b03b"
+  },
+  "serialNumber": "N108DL",
+  "model": "B737-800",
+  "airline": "Delta",
+  "seatingCapacity": 160,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "DTW-FLL"
+    },
+    {
+      "item": "BWI-SJC"
+    },
+    {
+      "item": "MCI-MSY"
+    },
+    {
+      "item": "MCI-SFO"
+    },
+    {
+      "item": "PDX-PHX"
+    },
+    {
+      "item": "MSY-MSP"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69263a295fbc18f62602b03c"
+  },
+  "serialNumber": "N811WN",
+  "model": "B737 MAX 8",
+  "airline": "Southwest",
+  "seatingCapacity": 178,
+  "status": "Active",
+  "assignedRoutes": [
+    {
+      "item": "HOU-CVG"
+    },
+    {
+      "item": "SLC-SMF"
+    },
+    {
+      "item": "MSY-LAS"
+    },
+    {
+      "item": "BWI-DAL"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "692b7fb855186e7f3abb76d1"
+  },
+  "serialNumber": "",
+  "brand": "",
+  "model": "",
+  "airline": "",
+  "seatingCapacity": 0,
+  "range": "",
+  "status": "",
+  "assignedRoutes": []
+}]

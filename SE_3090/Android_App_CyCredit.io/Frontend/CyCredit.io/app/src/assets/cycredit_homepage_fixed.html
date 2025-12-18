@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Cycredit.io</title>
+<style>
+  :root {
+    --bg: #07080c;
+    --gold: #F1BE48;
+    --gold-deep: #8C6A17;
+    --gold-soft: #F7D885;
+    --text: #EAEAEA;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, Segoe UI, Arial;
+  }
+  .wrap {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .frame {
+    width: min(1200px, 94vw);
+    box-shadow: 0 24px 60px rgba(0,0,0,.55);
+    border-radius: 22px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #0b0c12, #0e1016);
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  h1 {
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: .14em;
+    opacity: .9;
+    text-transform: uppercase;
+  }
+  .controls { display: flex; gap: 10px; }
+  button {
+    cursor: pointer;
+    border: 1px solid #2b3140;
+    background: #171b23;
+    color: #e8e8e8;
+    border-radius: 10px;
+    padding: 8px 12px;
+  }
+  button:hover { filter: brightness(1.12); }
+  .stage { background: #0b0c12; display: grid; place-items: center; }
+  svg { width: 100%; height: auto; display: block; }
+
+  @keyframes arrowSweep {
+    0% { opacity: .25; transform: translateX(-18px); }
+    60% { opacity: 1; transform: translateX(0); }
+    100% { opacity: .92; transform: translateX(4px); }
+  }
+  @keyframes xpFill {
+    0% { transform: scaleY(0); }
+    10% { transform: scaleY(.05); }
+    90% { transform: scaleY(1); }
+    100% { transform: scaleY(1); }
+  }
+  @keyframes xpSpark {
+    0%,70% { opacity: 0; transform: translateY(0) scale(.7); }
+    85% { opacity: 1; transform: translateY(-12px) scale(1); }
+    100% { opacity: 0; transform: translateY(-20px) scale(1.05); }
+  }
+  .arrow { animation: arrowSweep 1.4s ease .15s infinite alternate; }
+  .label {
+    font: 900 clamp(54px,10vw,144px) 'Arial Black', Impact, system-ui, sans-serif;
+    letter-spacing: 5px;
+  }
+  .subtitle {
+    font: 600 clamp(14px,2.2vw,28px) ui-sans-serif, system-ui, Segoe UI, Arial;
+    letter-spacing: 2px;
+    opacity: .9;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="frame">
+    <div class="top">
+      <h1>Cycredit.io</h1>
+      <div class="controls"><button id="replay">Replay</button></div>
+    </div>
+    <div class="stage">
+      <svg id="hero" viewBox="0 0 1200 800" aria-label="Cycredit XP animation v7.1">
+        <defs>
+          <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M0 24 L24 0 M-6 18 L6 6 M18 30 L30 18" stroke="#1a1f2a" stroke-opacity=".35" stroke-width="1"/>
+          </pattern>
+          <radialGradient id="goldGlow" cx="50%" cy="50%" r="60%">
+            <stop offset="0%" stop-color="#FDE4A6" stop-opacity="1"/>
+            <stop offset="60%" stop-color="var(--gold)" stop-opacity=".45"/>
+            <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+          </radialGradient>
+          <!-- rounded corner clip for card image -->
+          <clipPath id="cardInner">
+            <rect x="0" y="0" rx="28" ry="28" width="420" height="260"/>
+          </clipPath>
+          <filter id="embossGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F1BE48" flood-opacity=".4"/>
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity=".35"/>
+          </filter>
+          <linearGradient id="xpGrad" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#8C6A17"/>
+            <stop offset="100%" stop-color="var(--gold)"/>
+          </linearGradient>
+        </defs>
+
+        <rect width="1200" height="800" fill="url(#grid)"/>
+        <rect width="1200" height="800" fill="#0b0c12" opacity=".9"/>
+        <circle cx="420" cy="360" r="260" fill="url(#goldGlow)" opacity=".18"/>
+
+        <g transform="translate(620,270)">
+          <path class="arrow" d="M-40,230 C60,160 200,80 340,10 L320,60 L420,0 L340,-90 L330,-20 C190,60 60,140 -40,210 Z"
+                fill="var(--gold)" opacity=".9"/>
+          <g>
+            <g transform="translate(0,0)">
+              <rect x="0" y="30" width="64" height="220" rx="16" fill="none" stroke="var(--gold-deep)" stroke-opacity=".45" stroke-width="3"/>
+              <rect x="0" y="30" width="64" height="220" rx="16" fill="url(#xpGrad)" style="transform-origin:32px 250px; animation: xpFill 2.6s ease-in-out infinite;"/>
+              <circle cx="32" cy="28" r="6" fill="var(--gold-soft)" style="animation: xpSpark 2.6s ease-in-out infinite;"/>
+            </g>
+            <g transform="translate(92,0)">
+              <rect x="0" y="10" width="64" height="240" rx="16" fill="none" stroke="var(--gold-deep)" stroke-opacity=".45" stroke-width="3"/>
+              <rect x="0" y="10" width="64" height="240" rx="16" fill="url(#xpGrad)" style="transform-origin:32px 250px; animation: xpFill 3s .25s ease-in-out infinite;"/>
+              <circle cx="32" cy="8" r="6" fill="var(--gold-soft)" style="animation: xpSpark 3s .25s ease-in-out infinite;"/>
+            </g>
+            <g transform="translate(184,-10)">
+              <rect x="0" y="0" width="64" height="260" rx="16" fill="none" stroke="var(--gold-deep)" stroke-opacity=".45" stroke-width="3"/>
+              <rect x="0" y="0" width="64" height="260" rx="16" fill="url(#xpGrad)" style="transform-origin:32px 260px; animation: xpFill 3.4s .5s ease-in-out infinite;"/>
+              <circle cx="32" cy="-2" r="6" fill="var(--gold-soft)" style="animation: xpSpark 3.4s .5s ease-in-out infinite;"/>
+            </g>
+            <g transform="translate(276,-30)">
+              <rect x="0" y="0" width="64" height="280" rx="20" fill="none" stroke="var(--gold-deep)" stroke-opacity=".45" stroke-width="3"/>
+              <rect x="0" y="0" width="64" height="280" rx="20" fill="url(#xpGrad)" style="transform-origin:32px 280px; animation: xpFill 3.8s .75s ease-in-out infinite;"/>
+              <circle cx="32" cy="-2" r="6" fill="var(--gold-soft)" style="animation: xpSpark 3.8s .75s ease-in-out infinite;"/>
+            </g>
+          </g>
+        </g>
+
+        <!-- Card frame + clipped image -->
+        <g transform="translate(220,250)" filter="url(#embossGlow)">
+          <rect x="0" y="0" rx="28" ry="28" width="420" height="260" fill="#11141b" stroke="var(--gold)" stroke-width="6"/>
+          <g clip-path="url(#cardInner)">
+            <image x="0" y="0" width="420" height="260" preserveAspectRatio="xMidYMid slice"
+                   href="hero_card.jpg"/>
+          </g>
+        </g>
+
+        <!-- Bottom text -->
+        <g transform="translate(120,640)">
+          <text class="label" x="0" y="0" fill="var(--gold)" style="filter:drop-shadow(0 0 8px rgba(241,190,72,.45))">CYCREDIT</text>
+          <text class="subtitle" x="6" y="42" fill="#e6e6e6">earn XP, build credit — play to progress</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('replay').addEventListener('click', () => {
+  const stage = document.querySelector('.stage');
+  const oldSvg = document.getElementById('hero');
+  const clone = oldSvg.cloneNode(true);
+  stage.replaceChild(clone, oldSvg);
+});
+</script>
+</body>
+</html>

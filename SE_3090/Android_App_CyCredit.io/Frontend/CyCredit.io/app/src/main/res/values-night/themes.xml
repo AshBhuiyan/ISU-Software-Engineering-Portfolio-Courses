@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Night mode uses same PlayStation theme (already dark) -->
+    <style name="Base.Theme.CyCredit.Playstation" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary colors -->
+        <item name="colorPrimary">@color/ps_primary_blue_light</item>
+        <item name="colorPrimaryVariant">@color/ps_primary_blue_dark</item>
+        <item name="colorOnPrimary">@color/ps_text_primary</item>
+        
+        <!-- Accent color -->
+        <item name="colorAccent">@color/ps_accent</item>
+        
+        <!-- Background colors -->
+        <item name="android:windowBackground">@color/ps_background</item>
+        <item name="colorSurface">@color/ps_card</item>
+        <item name="colorOnSurface">@color/ps_text_primary</item>
+        
+        <!-- Status and navigation bars -->
+        <item name="android:statusBarColor">@color/ps_primary_blue_dark</item>
+        <item name="android:navigationBarColor">@color/ps_primary_blue_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/ps_text_primary</item>
+        <item name="android:textColorSecondary">@color/ps_text_secondary</item>
+    </style>
+</resources>

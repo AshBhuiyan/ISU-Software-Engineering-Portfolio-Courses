@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SignupActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signup"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="24dp"
+        android:textSize="28sp"
+        android:textColor="#3F51B5" />
+
+    <!-- Username -->
+    <EditText
+        android:id="@+id/signup_username_edt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Choose a username"
+        android:inputType="textPersonName"
+        android:padding="12dp" />
+
+    <!-- Password -->
+    <EditText
+        android:id="@+id/signup_password_edt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Choose a password (min 6)"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:layout_marginTop="12dp" />
+
+    <!-- Confirm Password -->
+    <EditText
+        android:id="@+id/signup_confirm_edt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Confirm password"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:layout_marginTop="12dp" />
+
+    <!-- Actions -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp">
+
+        <Button
+            android:id="@+id/signup_login_btn"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:backgroundTint="#607D8B"
+            android:layout_marginEnd="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+
+        <Button
+            android:id="@+id/signup_signup_btn"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:backgroundTint="#009688"
+            android:layout_marginStart="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

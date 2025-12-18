@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="28dp"
+    android:background="?attr/selectableItemBackgroundBorderless">
+
+    <!-- Glow effect container (for positioning) -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <!-- Glow effect (hidden by default) -->
+        <View
+            android:id="@+id/glow"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:background="@drawable/building_glow"
+            android:alpha="0"
+            android:visibility="gone"/>
+
+        <!-- Building icon -->
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_gravity="center"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_pokestop"/>
+    </FrameLayout>
+
+    <!-- Building name label -->
+    <TextView
+        android:id="@+id/building_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Building"
+        android:textColor="@color/ps_text_primary"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:shadowColor="#80000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2" />
+</LinearLayout>

@@ -1,0 +1,355 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>About CyCredit</title>
+<style>
+  :root { --bg:#070C16; --fg:#EAEFF6; --accent:#ffd166; }
+  html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+  .stage{height:100vh;width:100vw;display:grid;place-items:center;overflow:hidden;}
+  .card{display:grid;gap:12px;place-items:center;text-align:center}
+  .big{font-size: clamp(28px,6vw,64px); font-weight: 900; letter-spacing: 1px; text-transform: uppercase; text-shadow: 0 6px 24px rgba(0,0,0,.6);}
+  .neon{color:var(--accent); text-shadow: 0 0 10px rgba(255,210,102,.75), 0 0 24px rgba(255,210,102,.55);}
+  .neon-cycredit{color:#F1BE48; text-shadow: 0 0 12px rgba(241,190,72,.8), 0 0 28px rgba(155,13,36,.7), 0 0 40px rgba(155,13,36,.5), 0 0 60px rgba(155,13,36,.3);}
+  .muted{opacity:.8}
+  .hidden{opacity:0; transform: translateY(8px); filter: blur(4px);}
+  .show  {opacity:1; transform: translateY(0); filter: blur(0); transition: all .7s ease;}
+  .btn{position:fixed;left:50%;transform:translateX(-50%);bottom:max(24px,env(safe-area-inset-bottom)+24px);padding:14px 22px;border-radius:26px;background:#1166ff;color:#fff;font-weight:800;text-decoration:none;z-index:1000}
+  /* Continue button - Iowa State colors (Cardinal & Gold) - toned down red */
+  /* Positioned same as Start Game button: top:calc(80vh + 20px) */
+  /* 2 sizes smaller than Start Game button */
+  #continue{position:fixed!important;left:50%!important;transform:translateX(-50%)!important;top:calc(80vh + 20px)!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;min-width:140px;height:36px;padding:0 14px;border-radius:18px;font-weight:bold;font-size:13px;letter-spacing:.01em;text-decoration:none;color:#F1BE48;background:#9B0D24;border:1.5px solid #F1BE48;box-shadow:0 3px 8px rgba(155,13,36,.3),0 0 6px rgba(241,190,72,.25);z-index:50;transition:all .2s ease;text-align:center}
+  #continue.hidden{opacity:0;transform:translateX(-50%) translateY(8px);filter:blur(4px)}
+  #continue.show{opacity:1;transform:translateX(-50%) translateY(0);filter:blur(0);transition:all .6s ease}
+  #continue:active{transform:translateX(-50%) scale(.98);opacity:.9;box-shadow:0 2px 6px rgba(155,13,36,.25),0 0 4px rgba(241,190,72,.2)}
+  #continue:hover{background:#8B0A1F;box-shadow:0 6px 16px rgba(155,13,36,.4),0 0 12px rgba(241,190,72,.3)}
+  .skip{position:fixed;top:max(12px,env(safe-area-inset-top)+12px);right:16px;font-size:14px;opacity:.8;color:#fff;text-decoration:none;z-index:1000}
+  .content{display:none;max-width:960px;margin:0 auto;padding:24px 20px 120px;line-height:1.6;position:relative}
+  .content h2{margin-top:24px}
+  .divider{height:1px;background:rgba(255,255,255,.08);margin:16px 0}
+  /* Go to Homepage button - same size as Continue button */
+  #goToHomepage{display:inline-flex;align-items:center;justify-content:center;min-width:140px;height:36px;padding:0 14px;border-radius:18px;font-weight:bold;font-size:13px;letter-spacing:.01em;text-decoration:none;color:#F1BE48;background:#9B0D24;border:1.5px solid #F1BE48;box-shadow:0 3px 8px rgba(155,13,36,.3),0 0 6px rgba(241,190,72,.25);transition:all .2s ease;text-align:center;margin-top:24px}
+  #goToHomepage:active{transform:scale(.98);opacity:.9;box-shadow:0 2px 6px rgba(155,13,36,.25),0 0 4px rgba(241,190,72,.2)}
+  #goToHomepage:hover{background:#8B0A1F;box-shadow:0 6px 16px rgba(155,13,36,.4),0 0 12px rgba(241,190,72,.3)}
+  /* Scroll indicator arrow - positioned above Credit Score heading, clickable */
+  .scroll-indicator{position:absolute;left:50%;transform:translateX(-50%);z-index:40;opacity:.7;cursor:pointer;animation:scrollPulse 2s ease-in-out infinite;display:none;transition:opacity .3s ease}
+  .scroll-indicator:hover{opacity:1}
+  .scroll-arrow{width:24px;height:24px;border-right:2px solid rgba(241,190,72,.8);border-bottom:2px solid rgba(241,190,72,.8);transform:rotate(45deg);filter:drop-shadow(0 0 8px rgba(241,190,72,.6))}
+  @keyframes scrollPulse{0%,100%{opacity:.5;transform:translateX(-50%) translateY(0)}50%{opacity:.9;transform:translateX(-50%) translateY(8px)}}
+  /* Marker for positioning arrow above Credit Score */
+  #creditScoreMarker{position:relative}
+  /* Audio controls */
+  #audioControls{position:fixed;top:max(12px,env(safe-area-inset-top)+12px);left:16px;z-index:1001;display:flex;gap:8px;align-items:center}
+  #muteBtn{width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;backdrop-filter:blur(6px)}
+  #muteBtn:hover{background:rgba(0,0,0,.7)}
+  #muteBtn.muted{opacity:.5}
+  .soundOffHint{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.8);color:#fff;padding:12px 20px;border-radius:8px;font-size:12px;z-index:2000;opacity:0;pointer-events:none;transition:opacity .3s}
+  .soundOffHint.show{opacity:1}
+</style>
+</head>
+<body>
+<a class="skip" href="app://back">Skip</a>
+<div id="audioControls">
+  <button id="muteBtn" aria-label="Mute/Unmute">🔊</button>
+</div>
+<div class="soundOffHint" id="soundOffHint">Sound off</div>
+<audio id="themeAudio" preload="auto">
+  <source src="file:///android_asset/Main_Theme.wav" type="audio/wav">
+</audio>
+<section class="stage" id="stage">
+  <div class="card">
+    <div id="s1" class="big hidden neon">1_swarna_8</div>
+    <div id="s2" class="big hidden muted">presents</div>
+    <div id="s3" class="big hidden neon-cycredit">CyCredit.io</div>
+  </div>
+  <a id="continue" class="btn hidden" href="#about">Continue</a>
+</section>
+<main id="about" class="content">
+  <h1>CyCredit.io — How the Game Works</h1>
+  <div class="divider"></div>
+  <h2>Goal</h2>
+  <p>Earn money and XP, manage your spending, and build a strong credit score through monthly cycles.</p>
+  <h2>Turns & Months</h2>
+  <ul>
+    <li>You start each month with a set number of turns.</li>
+    <li>Activities (Library, Work Arcade, Wellness) usually consume a turn.</li>
+    <li>End Month generates a statement with interest/fees if applicable.</li>
+  </ul>
+  <h2>Spending & Statements</h2>
+  <ul>
+    <li>Purchases, fees, and interest add to your balance; payments reduce it.</li>
+    <li>Minimum due = max(2% of balance, a floor amount).</li>
+    <li>Late payments can add fees and affect your score.</li>
+  </ul>
+  <div id="creditScoreMarker" style="position:relative">
+    <!-- Scroll indicator arrow positioned here -->
+    <div class="scroll-indicator" id="scrollIndicator" style="bottom:100%;margin-bottom:8px">
+      <div class="scroll-arrow"></div>
+    </div>
+    <h2>Credit Score</h2>
+  </div>
+  <ul>
+    <li>Payment History (~35%), Utilization (~30%), Age (~10%).</li>
+    <li>HUD shows your current score and month-over-month change.</li>
+  </ul>
+  <h2>Rewards</h2>
+  <ul>
+    <li>Library: first-correct per question yields $ + XP once.</li>
+    <li>Work Arcade: payouts scale by difficulty with streak bonuses and soft caps.</li>
+    <li>Wellness: complete challenges to claim cash, XP, and badges.</li>
+  </ul>
+  <div style="text-align:center;margin-top:32px">
+    <a id="goToHomepage" href="app://back">Go to Homepage</a>
+  </div>
+</main>
+<script>
+  const s1 = document.getElementById('s1');
+  const s2 = document.getElementById('s2');
+  const s3 = document.getElementById('s3');
+  const btn = document.getElementById('continue');
+  const stage = document.getElementById('stage');
+  const about = document.getElementById('about');
+  const themeAudio = document.getElementById('themeAudio');
+  const muteBtn = document.getElementById('muteBtn');
+  const soundOffHint = document.getElementById('soundOffHint');
+  
+  // Audio state
+  let audioStarted = false;
+  let isMuted = false;
+  let revealTriggers = [false, false, false]; // Track which reveals have been triggered
+  let timeUpdateHandler = null;
+  
+  // Check for autoplay flag from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const shouldAutoplay = urlParams.get('autoplay') === '1';
+  
+  // Load mute state from localStorage
+  const savedMuteState = localStorage.getItem('cycredit_mute');
+  if (savedMuteState === 'true') {
+    isMuted = true;
+    themeAudio.muted = true;
+    muteBtn.classList.add('muted');
+    muteBtn.textContent = '🔇';
+  }
+  
+  // Mute/Unmute control
+  muteBtn.addEventListener('click', () => {
+    isMuted = !isMuted;
+    themeAudio.muted = isMuted;
+    muteBtn.classList.toggle('muted', isMuted);
+    muteBtn.textContent = isMuted ? '🔇' : '🔊';
+    localStorage.setItem('cycredit_mute', isMuted.toString());
+  });
+  
+  // Beat-synced reveal using audio time tracking
+  function setupBeatSync() {
+    if (timeUpdateHandler) {
+      themeAudio.removeEventListener('timeupdate', timeUpdateHandler);
+    }
+    
+    revealTriggers = [false, false, false]; // Reset triggers
+    
+    timeUpdateHandler = function() {
+      const currentTime = themeAudio.currentTime;
+      
+      // First beat: ~0.2-0.4s (1_swarna_8) - sync to first strong beat
+      if (currentTime >= 0.2 && currentTime < 0.5 && !revealTriggers[0]) {
+        revealTriggers[0] = true;
+        s1.classList.add('show');
+      }
+      // Second beat: ~1.0-1.3s (presents) - sync to second strong beat
+      else if (currentTime >= 1.0 && currentTime < 1.4 && !revealTriggers[1]) {
+        revealTriggers[1] = true;
+        s2.classList.add('show');
+      }
+      // Third beat: ~2.0-2.3s (CyCredit.io) - sync to third strong beat
+      else if (currentTime >= 2.0 && currentTime < 2.4 && !revealTriggers[2]) {
+        revealTriggers[2] = true;
+        s3.classList.add('show');
+        // Show Continue button after third reveal
+        setTimeout(() => {
+          btn.classList.add('show');
+        }, 600);
+        // Remove listener once all reveals are done
+        themeAudio.removeEventListener('timeupdate', timeUpdateHandler);
+        timeUpdateHandler = null;
+      }
+    };
+    
+    themeAudio.addEventListener('timeupdate', timeUpdateHandler);
+  }
+  
+  // Stop audio function (called from native or on navigation)
+  window.__stopIntroAudio = function() {
+    if (themeAudio && !themeAudio.paused) {
+      themeAudio.pause();
+      themeAudio.currentTime = 0;
+    }
+    // Remove timeupdate listener
+    if (timeUpdateHandler) {
+      themeAudio.removeEventListener('timeupdate', timeUpdateHandler);
+      timeUpdateHandler = null;
+    }
+    audioStarted = false;
+    revealTriggers = [false, false, false];
+  };
+  
+  // Stop audio when it finishes playing
+  themeAudio.addEventListener('ended', () => {
+    audioStarted = false;
+    // Remove timeupdate listener
+    if (timeUpdateHandler) {
+      themeAudio.removeEventListener('timeupdate', timeUpdateHandler);
+      timeUpdateHandler = null;
+    }
+  });
+  
+  // Start audio function (called from native or autoplay)
+  window.__startIntroAudio = function() {
+    if (audioStarted) return; // Prevent overlapping
+    
+    audioStarted = true;
+    
+    // Unlock audio context (WebView audio unlock)
+    if (window.AndroidAudio) {
+      window.AndroidAudio.unlockAudio();
+    }
+    
+    // Setup beat sync before playing
+    setupBeatSync();
+    
+    // Try to play audio
+    const playPromise = themeAudio.play();
+    
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        // Audio started successfully
+        if (isMuted) {
+          themeAudio.muted = true;
+        }
+      }).catch((error) => {
+        // Autoplay blocked - show hint and use timed reveals
+        console.log('Autoplay blocked:', error);
+        soundOffHint.classList.add('show');
+        setTimeout(() => soundOffHint.classList.remove('show'), 2000);
+        audioStarted = false;
+        // Fallback to timed reveals
+        startStagedReveal();
+      });
+    }
+  };
+  
+  // Fallback staged reveal (if audio doesn't play or beat sync fails)
+  function startStagedReveal() {
+    // First strong beat → 1_swarna_8
+    setTimeout(() => {
+      if (!revealTriggers[0]) {
+        s1.classList.add('show');
+        revealTriggers[0] = true;
+      }
+    }, 200);
+    
+    // Second strong beat → presents
+    setTimeout(() => {
+      if (!revealTriggers[1]) {
+        s2.classList.add('show');
+        revealTriggers[1] = true;
+      }
+    }, 1200);
+    
+    // Third strong beat → CyCredit.io
+    setTimeout(() => {
+      if (!revealTriggers[2]) {
+        s3.classList.add('show');
+        revealTriggers[2] = true;
+      }
+    }, 2200);
+    
+    // Show Continue button after intro
+    setTimeout(() => {
+      btn.classList.add('show');
+    }, 3000);
+  }
+  
+  // Start audio with beat sync
+  if (shouldAutoplay) {
+    // Small delay to ensure page is ready
+    setTimeout(() => {
+      window.__startIntroAudio();
+      // Set fallback timeout in case beat sync doesn't trigger
+      setTimeout(() => {
+        if (!revealTriggers[0] || !revealTriggers[1] || !revealTriggers[2]) {
+          startStagedReveal();
+        }
+      }, 3500);
+    }, 50);
+  } else {
+    // Fallback: start staged reveal even without autoplay
+    startStagedReveal();
+  }
+
+  // Continue → show full explanation (audio continues)
+  btn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    stage.style.display = 'none';
+    about.style.display = 'block';
+    // Show scroll indicator
+    const indicator = document.getElementById('scrollIndicator');
+    if (indicator) {
+      indicator.style.display = 'block';
+    }
+    // optional: scroll to top
+    location.hash = '#about';
+    // Audio continues playing in background
+  });
+  
+  // Stop audio on Skip/Back navigation
+  const skipLink = document.querySelector('.skip');
+  const goToHomepageLink = document.getElementById('goToHomepage');
+  
+  [skipLink, goToHomepageLink].forEach(link => {
+    if (link) {
+      link.addEventListener('click', () => {
+        window.__stopIntroAudio();
+      });
+    }
+  });
+  
+  // Stop audio on page unload
+  window.addEventListener('beforeunload', () => {
+    window.__stopIntroAudio();
+  });
+  
+  // Scroll indicator click handler - scroll to bottom
+  const scrollIndicator = document.getElementById('scrollIndicator');
+  if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', ()=>{
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    });
+  }
+  
+  // Hide scroll indicator when user scrolls near bottom or manually scrolls
+  let scrollTimeout;
+  window.addEventListener('scroll', ()=>{
+    const indicator = document.getElementById('scrollIndicator');
+    if (indicator) {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      // Hide if scrolled near bottom (within 200px) or if user manually scrolled
+      if (documentHeight - scrollPosition < 200) {
+        indicator.style.opacity = '0';
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(()=>{
+          indicator.style.display = 'none';
+        }, 500);
+      }
+    }
+  });
+</script>
+</body>
+</html>
+

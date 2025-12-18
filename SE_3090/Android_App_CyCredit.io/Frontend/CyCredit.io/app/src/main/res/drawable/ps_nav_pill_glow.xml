@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <layer-list>
+            <!-- Outer glow -->
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="#30FFFFFF" />
+                    <corners android:radius="20dp" />
+                </shape>
+            </item>
+            <!-- Inner glow -->
+            <item
+                android:left="2dp"
+                android:top="2dp"
+                android:right="2dp"
+                android:bottom="2dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="#20FFFFFF" />
+                    <corners android:radius="18dp" />
+                </shape>
+            </item>
+            <!-- Pill background -->
+            <item
+                android:left="4dp"
+                android:top="4dp"
+                android:right="4dp"
+                android:bottom="4dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="#15FFFFFF" />
+                    <corners android:radius="16dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+</selector>
+

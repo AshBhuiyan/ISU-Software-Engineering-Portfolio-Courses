@@ -1,0 +1,187 @@
+<!--
+ Page 2 - ISU Campus Explorer
+ Author: Ash Bhuiyan
+ COM S 3190 - Fall 2025 Midterm Project
+-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ISU Campus Explorer – Map</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="assets/theme.css" rel="stylesheet" />
+
+    <style>
+        .map-box {
+            width: 600px;
+            height: 500px;
+            background-image: url("assets/images/grass-texture-background.jpg");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            border: 3px solid black;
+            border-radius: 10px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .map-building {
+            position: absolute;
+            background-color: #f9fafb;
+            border: 3px solid black;
+            border-radius: 12px;
+            padding: 25px 40px;
+            font-weight: 600;
+            color: #222;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+
+        .map-building:hover {
+            background-color: #000;
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-building span {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-semibold" href="index.html">ISU Campus Explorer</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div id="nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="page2.html">Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="page3.html">Library</a></li>
+                    <li class="nav-item"><a class="nav-link" href="page4.html">Carver</a></li>
+                    <li class="nav-item"><a class="nav-link" href="authors.html">Authors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Input Controls -->
+    <section class="bg-light py-3 border-bottom">
+        <div class="container text-center">
+            <div class="row justify-content-center g-2">
+                <div class="col-md-3">
+                    <!-- Autocomplete input with dynamic datalist -->
+                    <input id="buildingInput" type="text" class="form-control text-center"
+                        placeholder="Enter Building Name" list="buildingList" autocomplete="off">
+                    <datalist id="buildingList"></datalist>
+                </div>
+
+                <div class="col-md-1">
+                    <button class="btn btn-primary w-100" id="goBtn">Go</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Canvas -->
+    <main class="py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Campus Map</h2>
+            <div class="map-box">
+                <!-- Parks Library -->
+                <a href="page3.html" class="map-building" style="top: 60px; left: 42%;">
+                    <span>📚 Parks Library</span>
+                </a>
+
+                <!-- Carver Hall -->
+                <a href="page4.html" class="map-building" style="bottom: 70px; right: 10%;">
+                    <span>🏫 Carver Hall</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer text-center py-4 mt-5">
+        <div class="container small">Team NM_1 — Mekhi &amp; Ash</div>
+    </footer>
+
+    <script>
+        // Known buildings 
+        const BUILDINGS = [
+            { name: "Parks Library", href: "page3.html", aliases: ["parks library", "parks", "library"] },
+            { name: "Carver Hall", href: "page4.html", aliases: ["carver hall", "carver"] }
+        ];
+
+        const listEl = document.getElementById("buildingList");
+        const inputEl = document.getElementById("buildingInput");
+        const goBtn = document.getElementById("goBtn");
+
+        // Helper: split into words and check prefix match
+        const words = str => str.toLowerCase().split(/[\s\-]+/).filter(Boolean);
+        const wordStartsWith = (text, q) => words(text).some(w => w.startsWith(q));
+
+        // Build the datalist ONLY after at least 1 character is typed
+        function refreshDatalist(filter = "") {
+            const f = filter.trim().toLowerCase();
+
+            if (f.length < 1) {         // nothing typed should be no suggestions
+                listEl.innerHTML = "";
+                return;
+            }
+
+            const matches = BUILDINGS
+                .filter(b =>
+                    wordStartsWith(b.name, f) ||
+                    b.aliases.some(a => wordStartsWith(a, f))
+                )
+                .map(b => b.name);
+
+            listEl.innerHTML = matches.map(m => `<option value="${m}"></option>`).join("");
+        }
+
+        // Update suggestions as the user types (typing a single letter shows relevant items)
+        inputEl.addEventListener("input", () => refreshDatalist(inputEl.value));
+
+        // Navigate on Enter
+        inputEl.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                goToBuilding();
+            }
+        });
+
+        // Navigate on button click
+        goBtn.addEventListener("click", goToBuilding);
+
+        function goToBuilding() {
+            const val = inputEl.value.trim().toLowerCase();
+            if (!val) {
+                alert("Please enter a building name (e.g., Parks Library or Carver Hall).");
+                return;
+            }
+
+            // Find best match by exact, alias, or word-start match
+            const match =
+                BUILDINGS.find(b => b.name.toLowerCase() === val || b.aliases.includes(val)) ||
+                BUILDINGS.find(b => wordStartsWith(b.name, val) || b.aliases.some(a => wordStartsWith(a, val))) ||
+                BUILDINGS.find(b => b.name.toLowerCase().includes(val)); // last-resort contains
+
+            if (match) {
+                window.location.href = match.href;
+            } else {
+                alert("Building not found. Try 'Parks Library' or 'Carver Hall'.");
+            }
+        }
+    </script>
+</body>
+
+</html>

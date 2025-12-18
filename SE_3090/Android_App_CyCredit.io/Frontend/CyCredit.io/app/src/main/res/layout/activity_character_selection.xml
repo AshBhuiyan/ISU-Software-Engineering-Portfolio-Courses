@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ps_background_gradient"
+    android:padding="16dp"
+    tools:context=".CharacterSelectionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/PsCard"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/title_character"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Your Character"
+                android:textColor="@color/ps_text_primary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:padding="20dp"
+                android:gravity="center"
+                android:textAlignment="center" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Characters List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/characterRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:overScrollMode="never"
+            android:clipToPadding="false"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Navigation Buttons -->
+        <LinearLayout
+            android:id="@+id/navigationButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:baselineAligned="false">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="Back"
+                app:srcCompat="@drawable/ic_back_arrow"
+                android:background="@drawable/ps_icon_button_bg"
+                android:tint="@color/ps_text_primary"
+                android:padding="12dp"
+                android:layout_marginEnd="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Set Your Starting Stats"
+                style="@style/PsPrimaryButton"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

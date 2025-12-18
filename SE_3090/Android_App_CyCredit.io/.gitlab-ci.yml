@@ -1,0 +1,117 @@
+stages:             
+  - mavenbuild      
+  - maventest       
+  - mavendeploy     
+  - androidbuild    
+  - androidtest     
+
+maven-build:    
+  image: maven:3.9-eclipse-temurin-17        
+  stage: mavenbuild     
+  tags:                 
+    - springboot_tag    
+  before_script:
+    - export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-17.0.17.0.10-1.el9.x86_64
+    - export PATH=$JAVA_HOME/bin:$PATH
+    - java -version
+    - mvn -version
+  script:               
+    - cd Backend/users/users        
+    - mvn -q -DskipTests package      
+  artifacts:            
+    paths:
+      - Backend/users/users/target/*.jar 
+  only:
+    refs:
+      - main            
+    changes:
+      - Backend/users/users/**/*    
+
+maven-test: 
+  image: maven:3.9-eclipse-temurin-17            
+  stage: maventest     
+  tags:
+     - springboot_tag   
+  before_script:
+    - export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-17.0.17.0.10-1.el9.x86_64
+    - export PATH=$JAVA_HOME/bin:$PATH
+    - java -version
+    - mvn -version
+  script:
+     - cd Backend/users/users       
+     - mvn -q test         
+  artifacts:
+    paths:
+      - Backend/users/users/target/surefire-reports/
+    reports:
+      junit: Backend/users/users/target/surefire-reports/TEST-*.xml
+    expire_in: 1 week
+  only:
+    refs:
+      - main            
+    changes:
+      - Backend/users/users/**/*    
+
+auto-deploy:
+  image: maven:3.9-eclipse-temurin-17
+  stage: mavendeploy    
+  tags:
+    - springboot_tag      
+  before_script:
+    - export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-17.0.17.0.10-1.el9.x86_64
+    - export PATH=$JAVA_HOME/bin:$PATH
+    - java -version
+    - mvn -version
+  script:               
+    - cd Backend/users/users        
+    - mvn -q -DskipTests package
+    - sudo mv target/*.jar /target/web-demo.jar 
+    - sudo systemctl stop system-web-demo
+    - sudo systemctl start system-web-demo
+  only:
+    refs:
+      - main            
+    changes:
+      - Backend/users/users/**/*    
+
+android-build:
+  image: afirefly/android-ci:java17 
+  stage: androidbuild               
+  tags:
+   - android_tag                    
+  before_script:                    
+    - cd Frontend/CyCredit.io
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./gradlew
+  script:
+    - ./gradlew build               
+  only:
+    refs:
+      - main                        
+    changes:
+      - Frontend/CyCredit.io/**/*               
+
+android-test:
+  image: afirefly/android-ci:java17
+  stage: androidtest               
+  tags:
+    - android_tag                   
+  before_script:                   
+     - cd Frontend/CyCredit.io
+     - export GRADLE_USER_HOME=`pwd`/.gradle
+     - chmod +x ./gradlew
+  script:
+     - ./gradlew testDebugUnitTest --continue
+     - ./gradlew createDebugCoverageReport --continue || true
+  artifacts:
+    paths:
+      - Frontend/CyCredit.io/app/build/reports/coverage/androidTest/debug/
+      - Frontend/CyCredit.io/app/build/reports/tests/testDebugUnitTest/
+    reports:
+      junit: Frontend/CyCredit.io/app/build/test-results/androidTest/TEST-*.xml
+    expire_in: 1 week
+  only:
+    refs:
+      - main          
+    changes:
+      - Frontend/CyCredit.io/**/*
